@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Авторизация карты с формой / payment_authorization_with_form</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="619413648.html">Прием платежей, выплаты на карты, операции холдирования и рекуррентов</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="622166139.html">Авторизация клиентов</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Авторизация карты с формой / payment_authorization_with_form
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Наталья Моргунова</span> on февр. 04, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Метод используется для сохранения реквизитов карты стороннего банка в системе.</p><p>Предназначен для партнеров, не имеющих сертификат безопасности PCI DSS, т.к. не предполагает хранение карточных данных в их система.</p><p><u>Описание процесса авторизации:</u></p><p>Партнер вызывает метод, в ответ получает ссылку, на которую переадресовывает клиента.</p><p>Клиент по ссылке вводит реквизиты карты и подтверждает операцию. </p><p>При регистрации с карты будет списана авторизационная сумма, а затем автоматически возвращена.</p><p>У клиента есть только одна попытка ввести данные при переходе по ссылке. При ошибке авторизации, необходимо вызвать метод еще раз и передать клиенту новую ссылку.</p><p /><p>Для получения идентификатора карты в системе необходимо вызвать метод <a href="625344582.html" data-linked-resource-id="625344582" data-linked-resource-version="6" data-linked-resource-type="page">Получение статуса платежа / payment_status</a>. Идентификатор карты будет указан в поле сard_token.</p><p>Идентификатор необходимо сохранить для использования в дальнейших операциях. </p><p>Финальный статус авторизационного платежа - cancelled</p><p>Время жизни ссылки - 15 минут. </p><blockquote><p>POST /api/v1/authorize/card/{client_id}/with/form</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="e7a3448e-a904-4b21-bd0d-f3deb93ba4cc" class="confluenceTable"><colgroup><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>URL параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Пример</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><p>client1</p></td></tr></tbody></table></div><div class="table-wrap"><table data-layout="default" data-local-id="0136fddc-194b-4c42-995f-5751f4a88a74" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>POST параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr></tbody></table></div><div class="table-wrap"><table data-layout="default" data-local-id="2fd7e0ad-65d2-4b21-b32e-81729412a41f" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>POST параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>redirect_url</p></th><td class="confluenceTd"><p>Ссылка на страницу, на которую попадет пользователь после ввода 3dsec</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_slug</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции со стороны партнера (не более 40 символов)</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p><br/><strong>Пример запроса</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;redirect_url&quot;: &quot;https://example.com&quot;,
+	&quot;order_slug&quot;:&quot;client_wof_32425_8e4Q0WyK&quot;
+}</pre>
+</div></div><p><strong>Пример ответа: Status 200 ОК</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;charge_link&quot;: &quot;https://baas.talkbank.io/charge/3&quot;,
+  &quot;order_id&quot;: 3,
+  &quot;order_slug&quot;: &quot;client_wof_32425_8e4Q0WyK&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при несуществующем client _id: Status 404 Not Found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при несуществующем order_slug: Status  422 Unprocessable Entity</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;order_slug must be [\\w.:-]{10,38}&quot;,
+    &quot;errors&quot;: []
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><div class="table-wrap"><table data-layout="default" data-local-id="d4a77e97-5cc2-42e2-9ae2-8f5be131c24f" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Поле ответа</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>charge_link</p></th><td class="confluenceTd"><p>Ссылка для перехода на ввод 3dsec</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_id</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_slug</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции на стороне партнера</p></td></tr></tbody></table></div><p><br/></p><p />
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

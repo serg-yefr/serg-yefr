@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Заказ и доставка карты по указанному адресу / card_delivery_store</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="622166078.html">Создание клиента, выпуск карты и оформление доставки</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Заказ и доставка карты по указанному адресу / card_delivery_store
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified on дек. 25, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Метод добавляет новую доставку пользователю. После успешной доставки пользователь должен запустить процесс активации (указать barcode).</p><p>Имеется два типа доставки и оплаты:</p><ul><li><p>type = courier: доставка осуществляется курьерской службой </p></li><li><p>type = post: доставка осуществляется Почтой России</p></li></ul><blockquote><p>POST /api/v1/clients/{client_id}/card-deliveries</p></blockquote><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>URL параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>уникальный идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td></tr></tbody></table></div><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>POST параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>type</p></th><td class="confluenceTd"><p>Тип доставки (courier, post)</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>phone</p></th><td class="confluenceTd"><p>Контактный телефон</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>city</p></th><td class="confluenceTd"><p>Населенный пункт (город, деревня)</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>address</p></th><td class="confluenceTd"><p>Адрес доставки (улица, дом, квартира/офис)</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>street</p></th><td class="confluenceTd"><p>Улица</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>house</p></th><td class="confluenceTd"><p>Дом</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>flat</p></th><td class="confluenceTd"><p>Квартира</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>cards_count</p></th><td class="confluenceTd"><p>Количество заказанных карт</p></td><td class="confluenceTd"><p>int</p></td></tr></tbody></table></div><p><strong>Пример входных параметров</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;type&quot;: &quot;post&quot;,
+    &quot;phone&quot;: &quot;+79260000000&quot;,
+    &quot;city&quot;: &quot;Москва&quot;,
+    &quot;address&quot;: &quot;Кремлевская пл., д. 1&quot;,
+	&quot;street&quot;: &quot;Кремлевская пл.&quot;,
+	&quot;house&quot;: &quot;1&quot;,
+	&quot;flat&quot;: &quot;1&quot;,
+	&quot;cards_count&quot;: 2
+}</pre>
+</div></div><p><br/><strong>Пример ответа</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{ 
+  client_id: 47,
+  delivery_id: 13611,
+  delivery_status_code: 1,
+  delivery_status_description: &#39;new&#39; 
+} </pre>
+</div></div><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>delivery_id</p></th><td class="confluenceTd"><p>Идентификатор доставки</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>delivery_status_code</p></th><td class="confluenceTd"><p>Статус доставки (см. метод получение статуса доставки)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>delivery_status_description</p></th><td class="confluenceTd"><p>Описание статуса</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

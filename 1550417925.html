@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Нотификация &quot;Регистрация доходов самозанятого&quot; / income</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625344756.html">Подписки на события</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="622166306.html">Оформление подписки / event_subscription_store</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Нотификация &quot;Регистрация доходов самозанятого&quot; / income
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Моргунова</span>, last modified by <span class='editor'> Алексей Кузьмин</span> on янв. 14, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><a href="622166306.html" data-linked-resource-id="622166306" data-linked-resource-version="6" data-linked-resource-type="page"><strong>Оформление подписки тут.</strong></a></p><p><br/><strong>Пример ответа</strong></p><p><em><strong>Ответ при статусе sent</strong></em></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">//Ответ при статусе sent
+{
+  &quot;type&quot;: &quot;income.income_register&quot;,
+  &quot;data&quot;: {
+    &quot;client_id&quot;: &quot;540860935007&quot;,
+    &quot;event&quot;: &quot;income_register&quot;,
+    &quot;id&quot;: 700154,
+    &quot;status&quot;: &quot;sent&quot;,
+    &quot;receipt_id&quot;: &quot;201h7x4z2r&quot;,
+    &quot;link&quot;: &quot;https://lknpd.nalog.ru/api/v1/receipt/637401428296/201h7x4z2r/print&quot;
+  },
+  &quot;timestamp&quot;: &quot;2022-01-14T08:04:03 00:00&quot;
+}</pre>
+</div></div><p><em><strong>Ответ при статусе failed</strong></em></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">//Ответ при статусе failed
+{
+  &quot;type&quot;: &quot;income.income_register&quot;,
+  &quot;data&quot;: {
+    &quot;client_id&quot;: &quot;540860935007&quot;,
+    &quot;event&quot;: &quot;income_register&quot;,
+    &quot;id&quot;: 700155,
+    &quot;status&quot;: &quot;failed&quot;,
+    &quot;errors&quot;: {
+      &quot;DUPLICATE&quot;: &quot;Внесение полного дубликата чека невозможно&quot;
+    }
+  },
+  &quot;timestamp&quot;: &quot;2022-01-14T09:49:15 00:00&quot;
+}</pre>
+</div></div><p /><p /><p>Расшифровка полей</p><div class="table-wrap"><table data-layout="default" data-local-id="457b59ea-d7d1-4444-adcc-2fcc2cc6eea2" class="confluenceTable"><colgroup><col style="width: 176.0px;"/><col style="width: 251.0px;"/><col style="width: 58.0px;"/></colgroup><tbody><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>Параметры</strong></p></td><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>Описание поля</strong></p></td><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>Тип</strong></p></td></tr><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>client_id</strong></p></td><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>id</strong></p></td><td class="confluenceTd"><p>Идентификатор чека в БД</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>receipt_id</strong></p></td><td class="confluenceTd"><p>Идентификатор чека в ФНС</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>data</strong></p></td><td class="confluenceTd"><p>Объект</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>status</strong></p></td><td class="confluenceTd"><p>Статус запроса: <strong>sent </strong>или <strong>failed</strong></p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>errors</strong></p></td><td class="confluenceTd"><p>В случае, если status = ‘error’, то поле <strong>description </strong>будет содержать описание ошибки (ошибок)</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>event</strong></p></td><td class="confluenceTd"><p>Событие</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>receipt_id</strong></p></td><td class="confluenceTd"><p>Идентификатор чека в ФНС</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>link</strong></p></td><td class="confluenceTd"><p>Ссылка на чек</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>timestamp</strong></p></td><td class="confluenceTd"><p>Время печати чека</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

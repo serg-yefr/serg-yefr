@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Маркетплейс Itelier</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1368555533.html">Работа с маркетплейсами</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Маркетплейс Itelier
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> mikhalev</span>, last modified on янв. 20, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <style type='text/css'>/*<![CDATA[*/
+div.rbtoc1646908077212 {padding: 0px;}
+div.rbtoc1646908077212 ul {list-style: disc;margin-left: 0px;}
+div.rbtoc1646908077212 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class='toc-macro rbtoc1646908077212'>
+<ul class='toc-indentation'>
+<li><a href='#id-МаркетплейсItelier-Созданиезаказа'>Создание заказа</a></li>
+<li><a href='#id-МаркетплейсItelier-СозданиеАтельера'>Создание Ательера</a></li>
+</ul>
+</div><h1 id="id-МаркетплейсItelier-Созданиезаказа">Создание заказа</h1><p>При успешной регистрации заказа будут созданы ссылки на чаты для исполнителя и для заказчика. </p><p><strong>Урл запроса</strong></p><blockquote><p>POST /api/v1/marketplace/itelier/order</p></blockquote><p><strong>Тело запроса в формате JSON</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="8ad35525-341b-412c-a440-41aff09f6874" class="confluenceTable"><colgroup><col style="width: 254.0px;"/><col style="width: 393.0px;"/><col style="width: 113.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Параметры</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>atelier_id</p></th><td class="confluenceTd"><p>ID ательера</p></td><td class="confluenceTd"><p>строка</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>atelier_name</p></th><td class="confluenceTd"><p>Имя/название ательера</p></td><td class="confluenceTd"><p>строка</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>atelier_branch_id</p></th><td class="confluenceTd"><p>ID филиала ательера</p></td><td class="confluenceTd"><p>строка</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>atelier_branch_address</p></th><td class="confluenceTd"><p>Aдрес филиала ательера</p></td><td class="confluenceTd"><p>строка</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>ID покупателя</p></td><td class="confluenceTd"><p>строка</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_name</p></th><td class="confluenceTd"><p>Имя/название покупателя </p></td><td class="confluenceTd"><p>строка</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>transaction_id</p></th><td class="confluenceTd"><p>ID заказа</p></td><td class="confluenceTd"><p>строка</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>transaction_details</p></th><td class="confluenceTd"><p>Массив дополнительных параметров заказа</p></td><td class="confluenceTd"><p>массив</p></td></tr></tbody></table></div><p><strong>Пример успешного ответа (http code 201)</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+	&quot;status&quot;: true,
+	&quot;result&quot;: {
+		&quot;customer_link&quot;: &quot;https://wa.me/79267340257?text=order-fc230557-76b6-4b4b-a6ee-cef2c2129e12&quot;,
+		&quot;merchant_link&quot;: &quot;https://t.me/itelier_bot?start=fc230557-76b6-4b4b-a6ee-cef2c2129e12&quot;
+	}
+}</pre>
+</div></div><div class="table-wrap"><table data-layout="default" data-local-id="aa2e8ecf-a416-4eae-8af4-bbe6103644a6" class="confluenceTable"><colgroup><col style="width: 380.0px;"/><col style="width: 380.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>customer_link</p></th><td class="confluenceTd"><p>ссылка на WhatsApp чат бот для заказчика</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>merchant_link</p></th><td class="confluenceTd"><p>ссылка на Telegram чат бот для исполнителя. Поле присутствует только при создании заказа с новым мерчантом</p></td></tr></tbody></table></div><p><strong>Пример ответа с ошибкой (http code 400)</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+	&quot;status&quot;: false,
+	&quot;errors&quot;: [
+		&quot;ATELIER_NAME_INVALID&quot;
+	]
+}</pre>
+</div></div><p><strong>Пример ответа с системной ошибкой сервиса без тела (http code 500)</strong></p><p>Не регламентирован</p><p><strong>Поля ответа</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="8452d75e-9b5e-49e2-b547-1e6329740d0c" class="confluenceTable"><colgroup><col style="width: 380.0px;"/><col style="width: 380.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поля в ответе</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>status</p></th><td class="confluenceTd"><p>статус ответа, true / false</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>result</p></th><td class="confluenceTd"><p>данные ответа, поле присутствует только в успешном ответе</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>errors</p></th><td class="confluenceTd"><p>массив ошибок. Присутствует только при status = false.</p></td></tr></tbody></table></div><p><strong>Возможные коды ошибок</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="e8c28537-d93b-455c-89ed-fd69f76f2e6c" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Код</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание кода</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_ID_EMPTY</p></th><td class="confluenceTd"><p>не передан или пустой параметр <strong>atelier_id</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_ID_INVALID</p></th><td class="confluenceTd"><p>некорректное значения поля <strong>atelier_id</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_NAME_EMPTY</p></th><td class="confluenceTd"><p>не передан или пустой параметр <strong>atelier_name</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_NAME_INVALID</p></th><td class="confluenceTd"><p>некорректное значения поля <strong>atelier_name</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_BRANCH_ID_EMPTY</p></th><td class="confluenceTd"><p>не передан или пустой параметр <strong>atelier_branch_id</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_BRANCH_ID_INVALID</p></th><td class="confluenceTd"><p>некорректное значения поля <strong>atelier_branch_id</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_BRANCH_ADDRESS_EMPTY</p></th><td class="confluenceTd"><p>не передан или пустой параметр <strong>atelier_branch_address</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_BRANCH_ADDRESS_INVALID</p></th><td class="confluenceTd"><p>некорректное значения поля <strong>atelier_branch_address</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>CLIENT_ID_EMPTY</p></th><td class="confluenceTd"><p>не передан или пустой параметр <strong>client_id</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>CLIENT_ID_INVALID</p></th><td class="confluenceTd"><p>некорректное значения поля <strong>client_id</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>CLIENT_NAME_EMPTY</p></th><td class="confluenceTd"><p>не передан или пустой параметр <strong>client_name</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>CLIENT_NAME_INVALID</p></th><td class="confluenceTd"><p>некорректное значения поля <strong>client_name</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>TRANSACTION_ID_EMPTY</p></th><td class="confluenceTd"><p>не передан или пустой параметр <strong>transaction_id</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>TRANSACTION_ID_INVALID</p></th><td class="confluenceTd"><p>некорректное значения поля <strong>transaction_id</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>TRANSACTION_DETAILS_EMPTY </p></th><td class="confluenceTd"><p>не передан или пустой параметр <strong>transaction_details</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>TRANSACTION_DETAILS_INVALID </p></th><td class="confluenceTd"><p>некорректное значения поля <strong>transaction_details</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ORDER_WITH_TRANSACTION_ID_ALREADY_EXIST</p></th><td class="confluenceTd"><p>заказ с указанным номером переданный в поле <strong>transaction_id</strong> уже существует</p></td></tr></tbody></table></div><p /><h1 id="id-МаркетплейсItelier-СозданиеАтельера">Создание Ательера</h1><p>При успешном создании ательера будет создана ссылка на чат.</p><p><strong>Урл запроса</strong></p><blockquote><p>POST /api/v1/marketplace/itelier/atelier</p></blockquote><p><strong>Тело запроса в формате JSON</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="96260b25-65c8-4f44-82ac-aa1cc38c8527" class="confluenceTable"><colgroup><col style="width: 254.0px;"/><col style="width: 393.0px;"/><col style="width: 113.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Параметры</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>atelier_id</p></th><td class="confluenceTd"><p>ID ательера</p></td><td class="confluenceTd"><p>строка</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>atelier_name</p></th><td class="confluenceTd"><p>Имя/название ательера</p></td><td class="confluenceTd"><p>строка</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>atelier_details</p></th><td class="confluenceTd"><p>Дополнительный массив параметров ательера</p></td><td class="confluenceTd"><p>массив</p></td></tr></tbody></table></div><p><strong>Пример успешного ответа (http code 201)</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+	&quot;status&quot;: true,
+	&quot;result&quot;: &quot;https://t.me/itelier_bot?start=merchant:d62df11b-8126-486f-883c-8a7d74b5df1a&quot;
+}</pre>
+</div></div><p><strong>Пример ответа с ошибкой (http code 400)</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+	&quot;status&quot;: false,
+	&quot;errors&quot;: [
+		&quot;ATELIER_NAME_INVALID&quot;
+	]
+}</pre>
+</div></div><p><strong>Пример ответа с системной ошибкой сервиса без тела (http code 500)</strong></p><p>Не регламентирован</p><p><strong>Поля ответа</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="a5e25912-0842-41ae-b2f9-6ba7d74ef501" class="confluenceTable"><colgroup><col style="width: 380.0px;"/><col style="width: 380.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поля в ответе</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>status</p></th><td class="confluenceTd"><p>статус ответа, true / false</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>result</p></th><td class="confluenceTd"><p>ссылка на чат, поле присутствует только в успешном ответе</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>errors</p></th><td class="confluenceTd"><p>массив ошибок. Присутствует только при status = false.</p></td></tr></tbody></table></div><p><strong>Возможные коды ошибок</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="df8b80ea-aed4-403c-918f-b11a87714bc8" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Код</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание кода</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_ID_EMPTY</p></th><td class="confluenceTd"><p>не передан или пустой параметр <strong>atelier_id</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_ID_INVALID</p></th><td class="confluenceTd"><p>некорректное значения поля <strong>atelier_id</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_NAME_EMPTY</p></th><td class="confluenceTd"><p>не передан или пустой параметр <strong>atelier_name</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>ATELIER_NAME_INVALID</p></th><td class="confluenceTd"><p>некорректное значения поля <strong>atelier_name</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><code>ATELIER_ALREADY_EXIST</code></p></th><td class="confluenceTd"><p>Ательер с указанным <strong>atelier_id</strong> параметром уже существует</p></td></tr></tbody></table></div><p> </p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Сценарий взаимодействия</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1493565447.html">Работа с бенефициарами</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Сценарий взаимодействия
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Vladimir Chesnokov</span> on окт. 12, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Партнер - это маркетплейс или платформа, которая осуществляет взаимодействие между исполнителями и заказчиками или продавцами и покупателями. </p><p>Бенефициар - это компания/физ.лицо, которому принадлежат средства на счете. </p><p>Управление бенефициарами используется в кейсах, когда на едином счете хранятся и управляются средства различных заказчиков/мерчантов/исполнителей (бенефициаров). </p><p>Алгоритм работы:</p><ol><li><p>Партнер создает сущность бенефициара с помощью <a href="https://talkbank.atlassian.net/wiki/spaces/BAAS/pages/1493270562/10.1.+beneficiary+add" rel="nofollow">метода 10.1 beneficiary_add</a></p><ol><li><p>В запросе передается название и ИНН бенефициара.</p></li><li><p>В ответ Партнер получает идентификатор бенефициара, который используется в дальнейшем взаимодействии.</p></li><li><p>Идентификатор бенефициара необходимо передавать при каждом запросе выплаты, для корректного учета баланса</p></li></ol></li><li><p>Для редактирования или блокировки бенефициара используется <a href="1493565457.html" data-linked-resource-id="1493565457" data-linked-resource-version="1" data-linked-resource-type="page">метод 10.2 beneficiary_edit</a></p></li><li><p>Для создания комиссии, которую Партнер взимает с бенефициара используется <a href="1493303307.html" data-linked-resource-id="1493303307" data-linked-resource-version="1" data-linked-resource-type="page">метод 10.5 beneficiary_commission_add</a></p><ol><li><p>Комиссия рассчитывается за каждую проведенную выплату</p></li><li><p>Дата начала действия комиссии - это дата с которой комиссия вступает в силу</p></li><li><p>Чтобы изменить комиссию по бенефициару необходимо создать новую комиссию с датой вступления изменений. </p><ol><li><p>Партнер создал комиссию, которая действует с 01.10.2020 в размере 3%</p></li><li><p>Партнер создает 2ю комиссию с датой начала действия от 01.11.2020 в размере 2%</p></li><li><p>С 01.11.2020 с бенефициара начнет взиматься новая комиссия 2%</p></li></ol></li><li><p>Типы комиссий: % от суммы операции, % от суммы операции ПЛЮС фикс сумма, % от суммы операции не менее фикс суммы </p><ol><li><p>3%</p></li><li><p>3% + 2 руб. за операцию</p></li><li><p>3%, но не менее 30 руб. за операцию</p></li></ol></li></ol></li><li><p>Для редактирования комиссии используется <a href="1493958662.html" data-linked-resource-id="1493958662" data-linked-resource-version="1" data-linked-resource-type="page">метод 10.6 beneficiary_commission_edit</a></p></li><li><p>Для удаления комиссии используется <a href="1493991433.html" data-linked-resource-id="1493991433" data-linked-resource-version="1" data-linked-resource-type="page">метод 10.7 beneficiary_commission_delete</a></p></li><li><p>Для получения списка созданных комиссий по бенефициару используется <a href="1493598219.html" data-linked-resource-id="1493598219" data-linked-resource-version="1" data-linked-resource-type="page">метод 10.8 beneficiary_commission_list</a></p></li><li><p>Для получения информации о бенефициаре, его актуальном остатке средств и начисленной комиссии используется <a href="https://talkbank.atlassian.net/wiki/spaces/BAAS/pages/1493237783/10.3.+beneficiary+show" rel="nofollow">метод 10.3 beneficiary_show</a></p></li></ol><p /><p />
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

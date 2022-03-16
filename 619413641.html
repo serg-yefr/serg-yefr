@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Создание заявки на выпуск карты Уралсиб /uralsib_card</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="622166078.html">Создание клиента, выпуск карты и оформление доставки</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Создание заявки на выпуск карты Уралсиб /uralsib_card
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified on дек. 25, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Метод запускает выпуск карты указанного типа в банке Уралсиб. Если такой client_id уже существует, то происходит повторный запуск с новыми данными.</p><blockquote><p>POST /api/v1/special/uralsib/cards</p></blockquote><p><strong>Входные параметры</strong></p><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>POST параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Формат</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Описание</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Уникальный идентификатор клиента, может состоять из: латинских букв, цифр и символов -._ Не более 40 символов</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.first_name</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Имя</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.last_name</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Фамилия </p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.middle_name</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Отчество</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.phone</p></th><td class="confluenceTd"><p>string; </p></td><td class="confluenceTd"><p>Номер телефона, форматы: +79451111111, 79451111111, 89451111111, 9451111111</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.secret_word</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Секретное слово</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.gender</p></th><td class="confluenceTd"><p>int</p></td><td class="confluenceTd"><p>Пол клиента: 1 - женщина, 0 - мужчина</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.birth_day</p></th><td class="confluenceTd"><p>date (yyyy-mm-dd)</p></td><td class="confluenceTd"><p>Дата рождения</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.birth_place</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Место рождения</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.document.serial</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Серия паспорта, 4 цифры</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.document.number</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Номер паспорта, 6 цифр</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.document.date</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Дата выдачи паспорта</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.document.issuer</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Кто выдал паспорт</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.document.issuer_code</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Код подразделения</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>person.address</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Адрес регистрации</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p /><p>person.email</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Электронная почта клиента</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>bank.branch</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Код филиала</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>bank.branch_id</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Код подразделения</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>use_courier</p></th><td class="confluenceTd"><p>int </p></td><td class="confluenceTd"><p>Доставить ли карту курьером? 1 - да, 0 - нет (получение в отделении)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>delivery.date</p></th><td class="confluenceTd"><p>date (yyyy-mm-dd)</p></td><td class="confluenceTd"><p>Желаемая дата доставки (при доставке курьером)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>delivery.address</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Адрес доставки (при доставке курьером)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>product_type</p></th><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Тип карты, доступные типы:  profit - карта “Прибыль”</p></td></tr></tbody></table></div><p><strong>Пример запроса</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    client_id : &quot;e6ae7545-9dfc-46e9-bdbb-a2847e371f6b&quot;,
+    person : {
+        first_name : &quot;Иван&quot;,
+        last_name : &quot;Иванов&quot;,
+        middle_name : &quot;Владимирович&quot;,
+		phone : &quot;79378700000&quot;,
+		secret_word : &quot;varvara&quot;,
+        gender : NumberInt(0),
+        birth_day : &quot;1990-02-13&quot;,
+		birth_place : &quot;Москва&quot;,
+		address : &quot;гор.Ульяновск, ул.Мельников д.10, кв.96&quot;,
+        document : {
+            serial : &quot;7205&quot;,
+            number : &quot;715312&quot;,
+            date : &quot;2010-03-19&quot;,
+            issuer : &quot;Отделением УФМС России по Ульяновской области в Железнодорожном р_не гор.Ульяновска&quot;,
+            issuer_code : &quot;730-004&quot;
+        }
+		address : &quot;г Москва, ул. Ленина 17, кв. 27&quot;,
+		email : &quot;test@mail.ru&quot;,
+	}
+	bank : {
+		branch: 
+		branch_id : 
+	}
+	use_courier : &quot;1&quot;,
+	delivery : {
+		date : &quot;2020-02-13&quot;,
+		address : &quot;Москва, ул. Ленина 17, кв. 27&quot;
+	}
+	product_type : &quot;profit&quot;
+ }</pre>
+</div></div><p><strong>Пример ответа</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;client_id&quot;: &quot;123124&quot;
+}</pre>
+</div></div><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Поле ответа</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

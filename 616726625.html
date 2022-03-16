@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Формирование запроса</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625278977.html">Подключение к API</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Формирование запроса
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Alexey Snigirev</span> on июн. 16, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Общение с сервисом осуществляется посредством HTTP запросов. POST, PUT параметры передаются в виде JSON теле сообщения в кодировке UTF-8. Каждый запрос целиком подписывается с помощью HMAC-SHA-256. Примеры реализации клиента для разных языков:</p><ul><li><p><a href="https://github.com/talkbank-io/api-baas-php" data-card-appearance="inline" class="external-link" rel="nofollow">https://github.com/talkbank-io/api-baas-php</a></p></li></ul><p>Данные для авторизации передаются с помощью HTTP заголовка <strong>Authorization</strong> в формате</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">TB1-HMAC-SHA256 uuid:hmac-sha256-hash</pre>
+</div></div><p>Обязательные заголовки запроса. Используются в подписи запроса.</p><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Имя</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Описание</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Пример</p></th></tr><tr><td class="confluenceTd"><p><strong>Date</strong></p></td><td class="confluenceTd"><p>Текущее время запроса, RFC 7231</p></td><td class="confluenceTd"><p>Tue, 19 Feb 2019 08:43:02 GMT</p></td></tr><tr><td class="confluenceTd"><p><strong>TB-Content-SHA256</strong></p></td><td class="confluenceTd"><p> SHA256 хеш от тела запроса, если запрос не содержит тела (например GET) - то от пустой строки</p></td><td class="confluenceTd"><p>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</p></td></tr></tbody></table></div><p>Генерация подписи, псевдокод</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">StringToSign = HmacSha256Hex(
+    Uppercase(RequestMethod) + &quot;\n&quot;
+    RequestPath + &quot;\n&quot;
+    RequestQuery + &quot;\n&quot;
+    SignedRequestHeaders + &quot;\n&quot;
+    SHA256Hex(RequestPayload)
+, SecretToken)
+
+</pre>
+</div></div><p>Список используемых функций</p><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Имя</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Описание</p></th></tr><tr><td class="confluenceTd"><p>HmacSha256Hex</p></td><td class="confluenceTd"><p>Генерация HMAC с использованием SHA256 хеш-функции в шестнадцатеричном виде</p></td></tr><tr><td class="confluenceTd"><p>Uppercase</p></td><td class="confluenceTd"><p>Смена регистра всех символов в верхний (заглавные)</p></td></tr><tr><td class="confluenceTd"><p>Lowercase</p></td><td class="confluenceTd"><p>Смена регистра всех символов в нижний (строчные)</p></td></tr><tr><td class="confluenceTd"><p>URLEncode</p></td><td class="confluenceTd"><p>URL экранирование, RFC3986 (пробел - <em>%20</em>)</p></td></tr><tr><td class="confluenceTd"><p>Sha256Hex</p></td><td class="confluenceTd"><p>Хеш-функция семейства SH-2 в шестнадцатеричном виде</p></td></tr><tr><td class="confluenceTd"><p>Trim</p></td><td class="confluenceTd"><p>Удаление с начала и конца строки всех пробельных символов, переносов</p></td></tr></tbody></table></div><p>Данные, используемые для создании подписи</p><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Имя</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Описание</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Пример</p></th></tr><tr><td class="confluenceTd"><p>RequestMethod</p></td><td class="confluenceTd"><p>HTTP метод, используемый для в запросе</p></td><td class="confluenceTd"><p>GET</p></td></tr><tr><td class="confluenceTd"><p>RequestPath</p></td><td class="confluenceTd"><p>Путь из URL</p></td><td class="confluenceTd"><p>/api/v1/method</p></td></tr><tr><td class="confluenceTd"><p>RequestQuery</p></td><td class="confluenceTd"><p>Часть URL, которая присваивает значения указанным параметрам</p></td><td class="confluenceTd"><p>limit=5&amp;skip=100</p></td></tr><tr><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">SignedRequestHeaders</pre>
+</div></div></td><td class="confluenceTd"><p>Заголовки запроса, которые необходимо подписать</p></td><td class="confluenceTd"><p>Date: Tue, 19 Feb 2019 08:43:02 GMT</p><p>TB-Content-SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</p></td></tr><tr><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">RequestPayload</pre>
+</div></div></td><td class="confluenceTd"><p>Тело запрос. Если запрос не содержит тела (например GET) - то пустая строка</p></td><td class="confluenceTd"><p>{&quot;data&quot;: &quot;request&quot;}</p></td></tr><tr><td class="confluenceTd"><p>SecretToken</p></td><td class="confluenceTd"><p>Секретный ключ, присвоенный партнёру</p></td><td class="confluenceTd"><p>2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b</p></td></tr></tbody></table></div><p>Перед конкатенацией необходимо отсортировать имена параметров по возрастанию</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">RequestQuery = URLEncode(QueryParameterName1) + &quot;=&quot; + URLEncode(QueryParamterValue1) + &quot;&amp;&quot;
+               URLEncode(QueryParameterName2) + &quot;=&quot; + URLEncode(QueryParamterValue2) + &quot;&amp;&quot;
+               ...
+               URLEncode(QueryParameterNameN) + &quot;=&quot; + URLEncode(QueryParamterValueN)</pre>
+</div></div><p>Перед конкатенацией необходимо отсортировать имена заголовков по возрастанию</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">SignedRequestHeaders = Lowercase(HeaderName1) + &quot;:&quot; + Trim(HeaderValue1) + &quot;\n&quot;
+                 	   Lowercase(HeaderName2) + &quot;:&quot; + Trim(HeaderValue2) + &quot;\n&quot;
+                 	   ...
+                 	   Lowercase(HeaderNameN) + &quot;:&quot; + Trim(HeaderValueN) + &quot;\n&quot;</pre>
+</div></div><h4 id="id-Формированиезапроса-Примерзапроса">Пример запроса</h4><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Метод запроса</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Путь со строкой запроса</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Время запроса</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тело запроса</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Идентификатор партнёра</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Секретный ключ</p></th></tr><tr><td class="confluenceTd"><p>GET</p></td><td class="confluenceTd"><p>/api/v1/method?limit=5&amp;alpha=&amp;skip=50</p></td><td class="confluenceTd"><p>2019-02-19 11:43:02 +03:00</p></td><td class="confluenceTd"><p>(пустая строка)</p></td><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">a2281839-c0c2-424c-9b1a-12e79fce77fc</pre>
+</div></div></td><td class="confluenceTd"><p>2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b</p></td></tr></tbody></table></div><p>Данные для подписи</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">GET
+/api/v1/method
+alpha=&amp;limit=5&amp;skip=50
+date:Tue, 19 Feb 2019 08:43:02 GMT
+tb-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</pre>
+</div></div><p>Итоговое значение<strong> Authorization</strong> заголовка</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">TB1-HMAC-SHA256 a2281839-c0c2-424c-9b1a-12e79fce77fc:0ac12ac72ae5fff35f644b8304f92cb16c61bc0e6c92c16ad181d2433825b243</pre>
+</div></div><h4 id="id-Формированиезапроса-Примерзапроса.1">Пример запроса</h4><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Метод</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Путь со строкой запроса</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Время</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тело</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Идентификатор партнёра</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Секретный ключ</p></th></tr></tbody></table></div><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/><col style="width: 113.33px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Метод</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Путь со строкой запроса</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Время</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тело</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Идентификатор партнёра</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Секретный ключ</p></th></tr><tr><td class="confluenceTd"><p>POST</p></td><td class="confluenceTd"><p>/api/v1/method</p></td><td class="confluenceTd"><p>2019-02-19 14:43:02 +03:00</p></td><td class="confluenceTd"><p>{&quot;data&quot;: &quot;request&quot;}</p></td><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">a2281839-c0c2-424c-9b1a-12e79fce77fc</pre>
+</div></div></td><td class="confluenceTd"><p>2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b</p></td></tr></tbody></table></div><p>Данные для подписи</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">POST
+/api/v1/method
+
+date:Tue, 19 Feb 2019 11:43:02 GMT
+tb-content-sha256:3632663a8715e0e552f7dfcad4b7ada99005cb60497269c62c116fea7a5a6eee
+3632663a8715e0e552f7dfcad4b7ada99005cb60497269c62c116fea7a5a6eee</pre>
+</div></div><p>Итоговое значение<strong> Authorization</strong> заголовка</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">TB1-HMAC-SHA256 a2281839-c0c2-424c-9b1a-12e79fce77fc:192cdf7b394464e7f06db97df27b21fd17174299050f6f608d396892cf70fc</pre>
+</div></div><p />
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Снятие блокировки с карты / card_unlock</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625279092.html">Работа с картами Talkbank</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Снятие блокировки с карты / card_unlock
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Наталья Моргунова</span> on дек. 01, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Метод позволяет разблокировать карту клиента, если карта была заблокирована клиентом или на стороне TalkBank.</p><p>Блокировка снимается в течение 1 минуты.</p><p>Для проверки статуса блокировки необходимо запросить метод <a href="619413624.html" data-linked-resource-id="619413624" data-linked-resource-version="6" data-linked-resource-type="page">Получение реквизитов карты / card_details</a></p><p>В поле is_locked будет установлено значение &quot;1&quot;.</p><blockquote><p>DELETE /api/v1/clients/{client_id}/cards/{barcode}/lock</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="4afc3f29-0baa-405d-9979-3d968b348b58" class="confluenceTable"><colgroup><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>URL параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Пример</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>client1</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>barcode</p></th><td class="confluenceTd"><p>Штриховой код карты</p></td><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">2000000000001</pre>
+</div></div></td></tr></tbody></table></div><p /><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;barcode&quot;: &quot;2000000000001&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при несуществующем id клиента: Status  200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;barcode&quot;: &quot;2000000000001&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при несуществующем баркоде: Status 404 Not Found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p><strong>Параметры ответа</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="32afef6b-63f8-48e6-88f6-93e83c8088a1" class="confluenceTable"><colgroup><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Параметры ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>barcode</p></th><td class="confluenceTd"><p>Штриховой код карты</p></td><td class="confluenceTd"><p>string (path)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>description</p></th><td class="confluenceTd"><p>Описание</p></td><td class="confluenceTd"><p>string (path)</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

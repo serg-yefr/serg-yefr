@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Публичный метод авторизации незарегистрированной карты</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="619413648.html">Прием платежей, выплаты на карты, операции холдирования и рекуррентов</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="622166139.html">Авторизация клиентов</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Публичный метод авторизации незарегистрированной карты
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Наталья Моргунова</span> on янв. 25, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <blockquote><p>POST /client/v1/authorize</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="50c8a392-3bbd-40ad-a3df-ec55c8244468" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>POST параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">token</pre>
+</div></div></th><td class="confluenceTd"><p>Токен, необходимый для запроса к публичному методу авторизации карты. Время жизни - 15 минут. Количество попыток - 1</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">card_info</pre>
+</div></div></th><td class="confluenceTd"><p>информация о карте</p></td><td class="confluenceTd"><p>array</p></td></tr></tbody></table></div><p><br/><strong>Пример запроса</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;token&quot;: &quot;4dd1cc4a-ffed-4c69-b3e9-eda3a3673bff&quot;,
+  &quot;card_info&quot;: {
+        &quot;number&quot;: &quot;4444555566662222&quot;,
+        &quot;month&quot;: &quot;01&quot;,
+        &quot;year&quot;: &quot;2021&quot;,
+        &quot;cvv&quot;: &quot;123&quot;,
+        &quot;holder&quot;: &quot;TALKBANK BLACK&quot;
+    }
+}</pre>
+</div></div><p><strong>Пример ответа: Status 200 ОК</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;charge_link&quot;: &quot;http://charge&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при несуществующем баркоде: Status 404 Not Found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p /><div class="table-wrap"><table data-layout="default" data-local-id="1787d35e-776b-4170-9ae8-ccb274476e90" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/><col style="width: 140.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><code>charge_link</code></p></th><td class="confluenceTd"><p>Платежная ссылка</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

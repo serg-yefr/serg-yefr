@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Получение статуса активации карты / card_activation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="622166078.html">Создание клиента, выпуск карты и оформление доставки</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Получение статуса активации карты / card_activation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Наталья Моргунова</span> on янв. 12, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Метод позволяет проверить статус заявки на активацию карты. </p><blockquote><p>GET /api/v1/clients/{client_id}/cards/{barcode}/activation</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="9c15e291-d01c-4112-8788-0e0802a16c6d" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>URL параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>barcode</p></th><td class="confluenceTd"><p>Баркод карты</p></td><td class="confluenceTd"><p>string (path)</p></td></tr></tbody></table></div><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;barcode&quot;: &quot;2000005405815&quot;,
+  &quot;status&quot;: &quot;activated&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-11-29T12:49:47+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке id: Status 404 Not found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке в баркоде: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p /><p /><h4 id="id-Получениестатусаактивациикарты/card_activation-Расшифровкаполейответа">Расшифровка полей ответа</h4><div class="table-wrap"><table data-layout="default" data-local-id="4a0559c3-3dc5-4de5-8563-a10502995515" class="confluenceTable"><colgroup><col style="width: 219.0px;"/><col style="width: 257.0px;"/><col style="width: 344.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">barcode</pre>
+</div></div></th><td class="confluenceTd"><p>Баркод карты</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">status</pre>
+</div></div></th><td class="confluenceTd"><p>Статус активации</p></td><td class="confluenceTd"><p /></td></tr></tbody></table></div><h4 id="id-Получениестатусаактивациикарты/card_activation-Возможныезначенияполяstatus:">Возможные значения поля status:</h4><div class="table-wrap"><table data-layout="default" data-local-id="b7cd9b52-45c3-430d-985b-7100d304b467" class="confluenceTable"><colgroup><col style="width: 227.0px;"/><col style="width: 260.0px;"/><col style="width: 363.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Status</strong></p></th><th class="confluenceTh"><p><strong>Описание</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><td class="confluenceTd"><p>Pending</p></td><td class="confluenceTd"><p>В ожидании</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td class="confluenceTd"><p>Activated</p></td><td class="confluenceTd"><p>Активирована</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td class="confluenceTd"><p>Error</p></td><td class="confluenceTd"><p>Ошибка</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p><br/></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

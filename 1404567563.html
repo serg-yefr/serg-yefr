@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Отмена чека / selfemployments_cancel_receipt</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="616726828.html">Работа с самозанятыми</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Отмена чека / selfemployments_cancel_receipt
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Иван Максин</span>, last modified by <span class='editor'> Наталья Моргунова</span> on дек. 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <blockquote><p>DELETE /api/v1/selfemployments/{client_id}/receipt</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="703a01e9-17af-4433-8cca-0167c7257e0e" class="confluenceTable"><colgroup><col style="width: 190.0px;"/><col style="width: 190.0px;"/><col style="width: 190.0px;"/><col style="width: 190.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>URL параметры</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Тип</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Пример</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>client_id</strong></p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><p>client1</p></td></tr></tbody></table></div><div class="table-wrap"><table data-layout="default" data-local-id="106527fa-0007-48e4-8af7-e5f0555a2652" class="confluenceTable"><colgroup><col style="width: 202.0px;"/><col style="width: 157.0px;"/><col style="width: 92.0px;"/><col style="width: 229.0px;"/></colgroup><tbody><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>Параметры тела запроса</strong></p></td><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>Описание поля</strong></p></td><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>Тип</strong></p></td><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>  Примечание</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>ReceiptId</strong></p></th><td class="confluenceTd"><p>Идентификатор чека</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Reason</strong></p></th><td class="confluenceTd"><p>Причина отмены</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><p>Возможные значение <code>REGISTRATION_MISTAKE</code>/<code>REFUND</code></p></td></tr></tbody></table></div><p><strong>Пример запроса</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;ReceiptId&quot; =&gt; &quot;640243&quot;,
+    &quot;Reason&quot; =&gt; &quot;REFUND&quot;
+}</pre>
+</div></div><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;client_id&quot;: &quot;abc123&quot;,
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;data&quot;: {
+        &quot;RequestResult&quot;: &quot;DELETED&quot;
+    }
+}</pre>
+</div></div><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;client_id&quot;: &quot;abc123&quot;,
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;description&quot;: &quot;...&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 400 Bad Request</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Bad request&quot;,
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;errors&quot;: [
+        &quot;Чек не найден&quot;
+    ]
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при недостатке прав: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Access Denied.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p> </p><div class="table-wrap"><table data-layout="default" data-local-id="3d1b61a8-f2fd-4148-aaaf-47773f75092d" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Параметры</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>status</p></th><td class="confluenceTd"><p>Результат обработки запроса.</p><p>Возможные значения <strong>error</strong>/<strong>success</strong></p></td><td class="confluenceTd"><p>string (path)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>data</p></th><td class="confluenceTd"><p /></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>     RequestResult</p></th><td class="confluenceTd"><p>Возможные значения <strong>DELETED</strong></p><p /></td><td class="confluenceTd"><p>string (path)</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

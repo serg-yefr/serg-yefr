@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Получение статуса перевода card2card /</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625279092.html">Работа с картами Talkbank</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Получение статуса перевода card2card /
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Наталья Моргунова</span> on янв. 26, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Получение статуса по переводу card2card. Параметр payment_id получается из предыдушего метода.</p><blockquote><p>GET /api/v1/clients/{client_id}/card2card/{payment_id}</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="ee6168d4-99b9-401d-aadc-75bce2bfa1df" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>URL Параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>payment_id</p></th><td class="confluenceTd"><p>Идентификатор ссылки на пополнение</p></td><td class="confluenceTd"><p>string (path)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"></pre>
+</div></div><p><strong>Пример ответа: Status 200 ОК</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;payment_id&quot;: &quot;eykn54re&quot;,
+    &quot;is_complete&quot;: false,
+    &quot;payment_status&quot;: &quot;in process&quot;,
+    &quot;payment_status_description&quot;: &quot;В обработке&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при несуществующем id клиента: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;payment_id&quot;: &quot;eykn54re&quot;,
+    &quot;is_complete&quot;: false,
+    &quot;payment_status&quot;: &quot;in process&quot;,
+    &quot;payment_status_description&quot;: &quot;В обработке&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при несуществующем идентификаторе: Status 404 Not Found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p /><div class="table-wrap"><table data-layout="default" data-local-id="1787d35e-776b-4170-9ae8-ccb274476e90" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/><col style="width: 140.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>payment_id</p></th><td class="confluenceTd"><p>Идентификатор платежа</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>payment_status</p></th><td class="confluenceTd"><p>Идентификатор доставки</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>card_ref_id</p></th><td class="confluenceTd"><p>RefId карты <strong>пополнения</strong> (если доступен)</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>payment_status_description</p></th><td class="confluenceTd"><p>Расшифровка статуса доставки</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p><br/></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

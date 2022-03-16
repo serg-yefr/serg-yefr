@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Получение списка разрешений/ selfemployments_permissions</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="616726828.html">Работа с самозанятыми</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Получение списка разрешений/ selfemployments_permissions
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Максим Кучумов</span>, last modified by <span class='editor'> Наталья Моргунова</span> on дек. 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <blockquote><p>GET /selfemployments/{client_id}/permissions</p></blockquote><p> </p><div class="table-wrap"><table data-layout="default" data-local-id="35bc8bfa-b0b4-4317-bdbd-566e5b1fec20" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th class="confluenceTh"><p><strong>URL параметры</strong></p></th><th class="confluenceTh"><p><strong>Описание поля</strong></p></th><th class="confluenceTh"><p><strong>client1</strong></p></th></tr><tr><td class="confluenceTd"><p>client_id</p></td><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>client1</p></td></tr></tbody></table></div><p /><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;client_id&quot;: &quot;client123&quot;,
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;data&quot;: {
+        &quot;GrantedPermissionsList&quot;: [
+            &quot;CANCEL_ANY_INCOME&quot;,
+            &quot;INCOME_LIST&quot;,
+            &quot;INCOME_REGISTRATION&quot;,
+            &quot;INCOME_SUMMARY&quot;,
+            &quot;PAYMENT_INFORMATION&quot;,
+            &quot;TAX_PAYMENT&quot;,
+            &quot;TAXPAYER_UPDATE&quot;
+        ]
+    }
+}</pre>
+</div></div><p><strong>Пример ответа: Status 400 Bad Request</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;client_id&quot;: &quot;abc123&quot;,
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;errors&quot;: [],
+    &quot;description&quot;: &quot;Bad request&quot;
+}
+</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}
+</pre>
+</div></div><p><strong>Пример ответа при недостатке прав: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Access Denied.&quot;
+}
+</pre>
+</div></div><p><strong>Пример ответа: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}
+</pre>
+</div></div><p> </p><div class="table-wrap"><table data-layout="default" data-local-id="bb70f3f6-fb6f-4b38-96e5-e2f47fd1c3db" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/><col style="width: 140.0px;"/></colgroup><tbody><tr><th class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th class="confluenceTh"><p><strong>Описание поля</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><td class="confluenceTd"><p><code>client_id</code></p></td><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td class="confluenceTd"><p><code>status</code></p></td><td class="confluenceTd"><p>Статус выполнения запроса (success|error)</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td class="confluenceTd"><p><code>GrantedPermissionsList</code></p></td><td class="confluenceTd"><p>Список разрешений, которые самозанятый предоставил партнеру</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p>Возможные разрешения:</p><div class="table-wrap"><table data-layout="default" data-local-id="7df4344f-61c0-471a-acd4-e1a48d77f4ad" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th class="confluenceTh"><p><strong>Код разрешения</strong></p></th><th class="confluenceTh"><p><strong>Описание</strong></p></th></tr><tr><td class="confluenceTd"><p>INCOME_REGISTRATION</p></td><td class="confluenceTd"><p>Отражение дохода от моего имени</p></td></tr><tr><td class="confluenceTd"><p>PAYMENT_INFORMATION</p></td><td class="confluenceTd"><p>Получение информации по моим налоговым начислениям</p></td></tr><tr><td class="confluenceTd"><p>TAX_PAYMENT</p></td><td class="confluenceTd"><p>Оплата налоговых начислений от моего имени</p></td></tr><tr><td class="confluenceTd"><p>INCOME_LIST</p></td><td class="confluenceTd"><p>Получение информации по моим доходам</p></td></tr><tr><td class="confluenceTd"><p>INCOME_SUMMARY</p></td><td class="confluenceTd"><p>Получение сводной информации о доходе</p></td></tr><tr><td class="confluenceTd"><p>CANCEL_INCOME<strong><sup>*</sup></strong></p></td><td class="confluenceTd"><p>Корректировка сведений о моих доходах, поданных Партнером</p></td></tr><tr><td class="confluenceTd"><p>CANCEL_ANY_INCOME<strong><sup>*</sup></strong></p></td><td class="confluenceTd"><p>Корректировка сведений о моих доходах без ограничений</p></td></tr><tr><td class="confluenceTd"><p>TAXPAYER_UPDATE</p></td><td class="confluenceTd"><p>Корректировка сведений моего профиля</p></td></tr><tr><td class="confluenceTd"><p>PERMISSIONS_MGMT</p></td><td class="confluenceTd"><p>Управление Партнерами</p></td></tr></tbody></table></div><p><strong><sup>*</sup></strong> - взаимоисключающие разрешения</p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

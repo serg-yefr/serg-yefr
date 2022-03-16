@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Холдирование с формой / hold_with_form</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="619413648.html">Прием платежей, выплаты на карты, операции холдирования и рекуррентов</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625279034.html">Прием средств от клиентов</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="619413696.html">Холдирование средств</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Холдирование с формой / hold_with_form
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Наталья Моргунова</span> on февр. 04, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Возвращает ссылку на ввод данных карты. Если карта клиента ранее была авторизована, партнеру необходимо передать параметр card_token. В этой ситуации форма будет предзаполнена. Время жизни ссылки - 15 минут. </p><p>Клиенту будет необходимо ввести карточные данные и подтвердить операцию вводом кода 3ds.</p><p> </p><blockquote><p>POST /api/v1/hold/{client_id}/with/form</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="fa972905-40b4-49aa-a666-b465a65765c9" class="confluenceTable"><colgroup><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>URL параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Пример</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><p>client1</p></td></tr></tbody></table></div><div class="table-wrap"><table data-layout="default" data-local-id="6ec16a20-007b-4ee6-ad1e-f8bd5e7a4762" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>POST параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>amount</p></th><td class="confluenceTd"><p>Сумма списания в копейках</p></td><td class="confluenceTd"><p>int</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">redirect_url</pre>
+</div></div></th><td class="confluenceTd"><p>Ссылка на страницу, на которую попадет пользователь после ввода 3dsec</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_slug</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции со стороны партнера (не более 40 символов)</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>card_token</p></th><td class="confluenceTd"><p>Уникальный идентификатор карты в формате uuid</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p><strong>Пример запроса</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;amount&quot;: 100,
+    &quot;redirect_url&quot;: &quot;https://example.com&quot;,
+	&quot;order_slug&quot;:&quot;client_wof_32425_8e4Q0WyK&quot;,
+    &quot;card_token&quot;: &quot;23232323233&quot;
+}</pre>
+</div></div><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;hold_link&quot;: &quot;https://baas.talkbank.io/direct/payment/be6rwve6&quot;,
+  &quot;order_id&quot;: 3,
+  &quot;order_slug&quot;: &quot;client_wof_32425_8e4Q0WyK&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при недостатке прав: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Access Denied.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибочном client_id: Status 404 Not found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p /><div class="table-wrap"><table data-layout="default" data-local-id="22ea354a-2c5e-4032-958f-a319057b39a6" class="confluenceTable"><colgroup><col style="width: 233.0px;"/><col style="width: 447.0px;"/><col style="width: 140.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Поле ответа</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>hold_link</p></th><td class="confluenceTd"><p>Формочка для заполнения данными карты</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_slug</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции (не более 40 символов)</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p><br/></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

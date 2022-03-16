@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Получение реквизитов карты / card_details</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="622166078.html">Создание клиента, выпуск карты и оформление доставки</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Получение реквизитов карты / card_details
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Наталья Моргунова</span> on нояб. 29, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Метод возвращает реквизиты карты для пополнения по реквизитам (пополнение осуществляется по юридическому лицу).</p><blockquote><p>GET /api/v1/clients/{client_id}/cards/{barcode}</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="32eac367-f7ab-47ec-a719-427f130c675f" class="confluenceTable"><colgroup><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>URL параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Пример</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><p>client1</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>barcode</p></th><td class="confluenceTd"><p>Штриховой код карты</p></td><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">2000000000001</pre>
+</div></div></td></tr></tbody></table></div><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;card_number&quot;: &quot;4314 0901 20** ****&quot;,
+    &quot;expiration&quot;: &quot;11/24&quot;,
+    &quot;status&quot;: &quot;ValidCard&quot;,
+    &quot;currency&quot;: &quot;RUB&quot;,
+    &quot;recipient&quot;: &quot;Иванов Иван Иванович&quot;,
+    &quot;checking_account&quot;: &quot;40914810010550207764&quot;,
+    &quot;bank_recipient&quot;: &quot;ТКБ БАНК ПАО&quot;,
+    &quot;legal_address&quot;: &quot;109147, г. Москва, ул. Воронцовская, д.27/35, к/с: № 30101810800000000388 в ГУ Банка России по ЦФО&quot;,
+    &quot;bik&quot;: &quot;044525212&quot;,
+    &quot;inn&quot;: 77123456789
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"></pre>
+</div></div><p><strong>Пример ответа при несуществующем id: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке в баркоде: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p /><h4 id="id-Получениереквизитовкарты/card_details-Расшифровкаполей">Расшифровка полей</h4><div class="table-wrap"><table data-layout="default" data-local-id="ee10415a-95da-4883-9205-43b3f2768f8a" class="confluenceTable"><colgroup><col style="width: 257.0px;"/><col style="width: 375.0px;"/><col style="width: 188.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>card_number</p></th><td class="confluenceTd"><p>Номер карты, маскированный</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>expiration</p></th><td class="confluenceTd"><p>Срок действия карты</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>status</p></th><td class="confluenceTd"><p>Статус карты</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>currency</p></th><td class="confluenceTd"><p>Валюта остатка</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>is_locked</p></th><td class="confluenceTd"><p>Заблокирована ли карта</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>bank_recipient</p></th><td class="confluenceTd"><p>Банк-получатель</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>legal_address</p></th><td class="confluenceTd"><p>Юридический адрес банка</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>bik</p></th><td class="confluenceTd"><p>БИК банка</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>inn</p></th><td class="confluenceTd"><p>ИНН банка</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>recipient</p></th><td class="confluenceTd"><p>ФИО получателя</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>checking_account</p></th><td class="confluenceTd"><p>Расчетный счет получателя</p></td><td class="confluenceTd"><p>int</p></td></tr></tbody></table></div><p><strong>Возможные статусы карты:</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="3498f2da-c6be-4217-ae46-068101315a3d" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Status</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание</strong></p></th></tr><tr><td class="confluenceTd"><p>ValidCard</p></td><td class="confluenceTd"><p>Карта активна</p></td></tr><tr><td class="confluenceTd"><p>BlockedManual</p></td><td class="confluenceTd"><p>Карта заблокирована</p></td></tr><tr><td class="confluenceTd"><p>NotActivated</p></td><td class="confluenceTd"><p>Карта не активирована</p></td></tr><tr><td class="confluenceTd"><p>BlockedBank</p></td><td class="confluenceTd"><p>Заблокировано банком</p></td></tr><tr><td class="confluenceTd"><p>BlockedAntifrod</p></td><td class="confluenceTd"><p>Заблокировано банком из-за подозрительных операций</p></td></tr><tr><td class="confluenceTd"><p>Invalid</p></td><td class="confluenceTd"><p>Карта недействительна</p></td></tr><tr><td class="confluenceTd"><p>Expired</p></td><td class="confluenceTd"><p>Истек срок действия карты</p></td></tr><tr><td class="confluenceTd"><p>BlockedFinancial</p></td><td class="confluenceTd"><p>Заблокировано банком - банкротство, задолженность по карте</p></td></tr></tbody></table></div><p><br/></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

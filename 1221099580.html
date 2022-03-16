@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Выплаты по реквизитам / payment_to_account</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="619413648.html">Прием платежей, выплаты на карты, операции холдирования и рекуррентов</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="1217527831.html">Выплаты клиентам по реквизитам</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Выплаты по реквизитам / payment_to_account
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Polina Chunareva</span>, last modified by <span class='editor'> Игорь Бекренёв</span> on февр. 21, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <blockquote><p>POST /api/v1/account/transfer</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="52c7a696-60cc-4b58-bb4b-b73e971b78bf" class="confluenceTable"><colgroup><col style="width: 139.0px;"/><col style="width: 393.0px;"/><col style="width: 79.0px;"/><col style="width: 149.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Параметры</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Тип</strong></p></th><th class="confluenceTh"><p><strong>Обязательный?</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>amount</strong></p></th><td class="confluenceTd"><p>Сумма пополнения в копейках</p></td><td class="confluenceTd"><p>int</p></td><td class="confluenceTd"><p>Да</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>account</strong></p></th><td class="confluenceTd"><p>Номер счета получателя</p></td><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Да</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>bik</strong></p></th><td class="confluenceTd"><p>БИК банка получателя</p></td><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Да</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>name</strong></p></th><td class="confluenceTd"><p>Наименование получателя</p></td><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Да</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>inn</strong></p></th><td class="confluenceTd"><p>ИНН получателя</p></td><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Да</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>description</strong></p></th><td class="confluenceTd"><p>Описание платежа</p></td><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Нет</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>order_slug</strong></p></th><td class="confluenceTd"><p>Уникальный идентификатор операции со стороны партнера (не более 40 символов)</p></td><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Нет</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>receipt_id</strong></p></th><td class="confluenceTd"><p>Идентификатор чека самозанятого</p></td><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Нет</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>receipt_ids</strong></p></th><td class="confluenceTd"><p>Идентификаторы чеков самозанятого</p></td><td class="confluenceTd"><p>array</p></td><td class="confluenceTd"><p>Нет</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>beneficiary_id</strong></p></th><td class="confluenceTd"><p>Идентификатор бенефициара</p></td><td class="confluenceTd"><p>string</p></td><td class="confluenceTd"><p>Нет</p></td></tr></tbody></table></div><p><strong>Пример запроса</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;amount&quot;: 100,
+  &quot;account&quot;: &quot;00000000000000000001&quot;,
+  &quot;bik&quot;: &quot;000000001&quot;,
+  &quot;name&quot;: &quot;ООО \&quot;Рога и копыта\&quot;&quot;,
+  &quot;inn&quot;: &quot;1231231231&quot; 
+}</pre>
+</div></div><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;completed&quot;: false,
+    &quot;status&quot;: &quot;new&quot;,
+    &quot;order_slug&quot;: &quot;external_sandbox_e3bqG7MJ&quot;,
+    &quot;talkbank_commission&quot;: 2500,
+    &quot;beneficiary_partner_commission&quot;: null
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при недостатке прав: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Access Denied.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибочном номере ИНН: Status 422 Unprocessable Entity</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Validation error list&quot;,
+    &quot;errors&quot;: [
+        &quot;[inn]: This value should be numerical.&quot;,
+        &quot;[inn]: Значение слишком длинное. Должно быть равно 12 символам или меньше.&quot;
+    ]
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><div class="table-wrap"><table data-layout="default" data-local-id="379e4394-dd9f-4bda-bdeb-a3173f7a0454" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/><col style="width: 140.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поля ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th class="confluenceTh"><p><strong>completed</strong></p></th><td class="confluenceTd"><p>Флаг завершённости операции</p></td><td class="confluenceTd"><p>boolean</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>status</strong></p></th><td class="confluenceTd"><p>Статус операции</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>order_slug</strong></p></th><td class="confluenceTd"><p>Уникальный идентификатор операции со стороны партнера (не более 40 символов)</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p />
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

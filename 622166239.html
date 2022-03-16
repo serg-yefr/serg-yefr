@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Списание со счёта партнера на незарегистрированную карту с формой / payment_to_unregistered_card_with_form</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="619413648.html">Прием платежей, выплаты на карты, операции холдирования и рекуррентов</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="619282616.html">Выплаты на карты со счета партнера</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Списание со счёта партнера на незарегистрированную карту с формой / payment_to_unregistered_card_with_form
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Игорь Бекренёв</span> on февр. 21, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Метод позволяет перевести денежные средства со счета партнера на карту стороннего банка. Возвращает ссылку для ввода реквизитов карты клиента.</p><p>У пользователя есть только одна попытка ввести данные при переходе по ссылке. </p><p>Время жизни ссылки - 15 минут. </p><p>На карту клиента поступит та сумме, которая будет указана в поле amount. Комиссия за транзакцию будет списана со счета партнера.</p><p>Если необходимо переложить комиссию на сторону клиента, укажите это в поле percents_on_user</p><p>Для запроса статуса операции используется метод <a href="625344582.html" data-linked-resource-id="625344582" data-linked-resource-version="6" data-linked-resource-type="page">Получение статуса платежа / payment_status</a></p><blockquote><p>POST /api/v1/refill/{client_id}/unregistered/card/with/form</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="d7610d08-0776-4c74-887f-f8e625f57055" class="confluenceTable"><colgroup><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>URL параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Пример</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><p>client1</p></td></tr></tbody></table></div><div class="table-wrap"><table data-layout="default" data-local-id="80d78845-6138-4921-b743-42ea345e3a6c" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>POST параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>amount</p></th><td class="confluenceTd"><p>Сумма списания в копейках</p></td><td class="confluenceTd"><p>int</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>redirect_url</p></th><td class="confluenceTd"><p>Ссылка на страницу, на которую попадет пользователь после ввода 3dsec</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_slug</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции со стороны партнёра (не более 40 символов)</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>percents_on_user</p></th><td class="confluenceTd"><p>Переложить комиссии на клиента</p></td><td class="confluenceTd"><p>boolean</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>receipt_id</p></th><td class="confluenceTd"><p>Идентификатор чека самозанятого</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>receipt_ids</p></th><td class="confluenceTd"><p>Идентификаторы чеков самозанятого</p></td><td class="confluenceTd"><p>array</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>beneficiary_id</p></th><td class="confluenceTd"><p>Идентификатор бенефициара</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p><br/><strong>Пример запроса</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;amount&quot;: 100,
+    &quot;redirect_url&quot;: &quot;https://example.com&quot;,
+    &quot;order_slug&quot;: &quot;example_order_id&quot;,
+    &quot;percents_on_user&quot;: &quot;1&quot;
+}</pre>
+</div></div><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;order_id&quot;: 52798,
+    &quot;order_slug&quot;: &quot;224sdffthg&quot;,
+    &quot;refill_link&quot;: &quot;https://baas-staging.talkbank.io/direct/payment/jg3b743e&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки order_slug: Status 400 Bad Request</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Order 222 is used.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при недостатке прав: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Access Denied.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки: Status 404 Not Found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}</pre>
+</div></div><p> <strong>Пример ответа: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}    </pre>
+</div></div><p /><div class="table-wrap"><table data-layout="default" data-local-id="bbabe3f7-08b1-47fc-b6c0-d9fb68811039" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/><col style="width: 140.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Поле ответа</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>refill_link</p></th><td class="confluenceTd"><p>Ссылка для пополнения карты</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_id</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции</p></td><td class="confluenceTd"><p>int</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_slug</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции со стороны партнера (не более 40 символов)</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

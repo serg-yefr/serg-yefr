@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Списание средств с карты Talkbank на счёт партнёра / card_withdrawal</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="619413648.html">Прием платежей, выплаты на карты, операции холдирования и рекуррентов</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625279034.html">Прием средств от клиентов</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Списание средств с карты Talkbank на счёт партнёра / card_withdrawal
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Наталья Моргунова</span> on февр. 04, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Метод используется для рекурентных платежей с карты Talkbank выпущенных партнером. Например, досписание оплаты за услугу, подписки на сервис и т.д.</p><p>На счет партнера поступит сумма, указанная в поле &quot;amount&quot; за вычетом комиссии Talkbank.</p><p>Для уточнения статуса платежа используется метод <a href="625344582.html" data-linked-resource-id="625344582" data-linked-resource-version="6" data-linked-resource-type="page">Получение статуса платежа / payment_status</a></p><p>*Для выпуска карт необходимо использовать методы </p><p><a href="625377288.html" data-linked-resource-id="625377288" data-linked-resource-version="10" data-linked-resource-type="page">Активация карты / card_activate</a> или <a href="625377281.html" data-linked-resource-id="625377281" data-linked-resource-version="4" data-linked-resource-type="page">Выпуск виртуальной карты / card_activate_virtual</a></p><blockquote><p>POST /api/v1/clients/{clientId}/cards/{barcode}/withdrawal</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="a8ab0fc1-b361-4abc-a2a6-603816a0f61a" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Описание</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>barcode</p></th><td class="confluenceTd"><p>Баркод карты</p></td><td class="confluenceTd"><p>string (path)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>amount</p></th><td class="confluenceTd"><p>Сумма пополнения в копейках</p></td><td class="confluenceTd"><p>int</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_slug</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции со стороны партнера (не более 40 символов)</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p><strong>Пример запроса</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;amount&quot;: 100,
+	&quot;order_slug&quot;:&quot;client_wof_32425_8e4Q0WyK&quot;
+}</pre>
+</div></div><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+	&quot;order_id&quot;: 3,
+	&quot;order_slug&quot;: &quot;client_wof_32425_8e4Q0WyK&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при недостатке прав: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Access Denied.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибочном номере карты: Status 404 Not found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p /><div class="table-wrap"><table data-layout="default" data-local-id="557ae3a9-049e-4d3a-abe0-ccb597dd2b7c" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/><col style="width: 140.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поля ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Описание</p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_id</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции</p></td><td class="confluenceTd"><p>int</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_slug</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции со стороны партнера (не более 40 символов)</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

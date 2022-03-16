@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Изменение статуса регистрации самозанятого (selfemployments)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625344756.html">Подписки на события</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="622166306.html">Оформление подписки / event_subscription_store</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Изменение статуса регистрации самозанятого (selfemployments)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Polina Chunareva</span> on окт. 21, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Пример сообщения</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+   &quot;type&quot;: &quot;selfemployed_status.unbind&quot;,
+   &quot;data&quot;: {
+      &quot;client_id&quot;: &quot;04527b0c-3c1a-459d-8134-2b4e1359ea95&quot;,
+      &quot;event&quot;: &quot;unbind&quot;,
+      &quot;status&quot;: &quot;completed&quot;
+   },
+   &quot;timestamp&quot;: &quot;2021-07-23T01:35:28+03:00&quot;
+}</pre>
+</div></div><p /><p><strong>Структура</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="016ba1e4-bd7e-4416-a3e6-46a15621fde9" class="confluenceTable"><colgroup><col style="width: 99.0px;"/><col style="width: 205.0px;"/><col style="width: 455.0px;"/></colgroup><tbody><tr><th class="confluenceTh"><p><strong>Поле</strong></p></th><th class="confluenceTh"><p><strong>Описание</strong></p></th><th class="confluenceTh"><p><strong>Примечание</strong></p></th></tr><tr><td class="confluenceTd"><p>type</p></td><td class="confluenceTd"><p>тип события</p></td><td class="confluenceTd"><p>состоит из <code>selfemployed_status.&lt;event&gt;</code> , где <code>&lt;event&gt;</code> - тип операции</p></td></tr><tr><td class="confluenceTd"><p> data</p></td><td class="confluenceTd"><p>данные по событию</p></td><td class="confluenceTd"><p>включает в себя поля:</p><ul><li><p>client_id</p></li><li><p>event</p></li><li><p>status</p></li><li><p>details</p></li></ul><p /><p>Возможные значения поля <code>event</code>:</p><ul><li><p>register</p></li><li><p>unregister</p></li><li><p>bind</p></li><li><p>unbind</p></li></ul><p /><p>Возможные значения поля <code>status</code>:</p><ul><li><p>completed</p></li><li><p>failed</p></li></ul><p /><p>Поле <code>details</code> присутствует при событии register в статусе failed и может содержать поля:</p><ul><li><p>rejection_code</p></li><li><p>rejection_description</p></li></ul></td></tr><tr><td class="confluenceTd"><p>timestamp</p></td><td class="confluenceTd"><p>дата/время события</p></td><td class="confluenceTd"><p /></td></tr></tbody></table></div><p><strong>Пример сообщения при успешной регистрации самозанятого</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+   &quot;type&quot;: &quot;selfemployed_status.register&quot;,
+   &quot;data&quot;: {
+      &quot;client_id&quot;: &quot;21fc5216-a6cf-4098-92ce-94a7d7fe3367&quot;,
+      &quot;event&quot;: &quot;register&quot;,
+      &quot;status&quot;: &quot;completed&quot;
+   },
+   &quot;timestamp&quot;: &quot;2021-07-23T17:54:07+03:00&quot;
+}</pre>
+</div></div><p><strong>Пример сообщения при неуспешной регистрации самозанятого</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+   &quot;type&quot;: &quot;selfemployed_status.register&quot;,
+   &quot;data&quot;: {
+      &quot;client_id&quot;: &quot;82ab57c9-47b2-44d6-b7c6-758a2cc0a9a3&quot;,
+      &quot;event&quot;: &quot;register&quot;,
+      &quot;status&quot;: &quot;failed&quot; 
+      &quot;details&quot;: {
+         &quot;rejection_code&quot;: &quot;NOT_IDENTIFYED&quot;,
+         &quot;rejection_description&quot;: &quot;По Вашим паспортным данным не найден ИНН. Если Вы знаете свой ИНН, попробуйте зарегистрироваться, с использованием ИНН и пароля от  ЛК физического лица. Если у Вас нет ИНН, Вам необходимо обратиться в любой налоговый орган, обслуживающий физических лиц, для получения ИНН.&quot;
+      }
+   }
+   &quot;timestamp&quot;: &quot;2021-05-20T12:24:01+03:00&quot;
+}</pre>
+</div></div><p /><p><strong>Список всех причин для отказа в регистрации самозанятого от ФНС (rejection_code)</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="8b626c7b-b542-47a5-9578-875fe940aa91" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><td class="confluenceTd"><p><strong>Код</strong></p></td><td class="confluenceTd"><p><strong>Описание</strong></p></td><td class="confluenceTd"><p><strong>Текст по умолчанию</strong></p></td></tr><tr><td class="confluenceTd"><p>REGISTERED </p></td><td class="confluenceTd"><p>ФЛ состоит на учете в налоговом органе в качестве НП НПД</p></td><td class="confluenceTd"><p>«Физическое лицо уже поставлено на учет в налоговом органе в качестве налогоплательщика налога на профессиональный доход. Повторная постановка на учет не требуется»</p></td></tr><tr><td class="confluenceTd"><p>INCOME_OVERFLOW</p></td><td class="confluenceTd"><p>Пользователь был зарегистрирован, превысил лимит дохода в текущем календарном году (2 400 000 руб.), снялся с учета и пытается встать на учет повторно</p></td><td class="confluenceTd"><p>«Доход за текущий календарный год достиг допустимого порога в %s миллиона рублей. Вы не можете встать на учёт»</p></td></tr><tr><td class="confluenceTd"><p>DEBTS_FOUND </p></td><td class="confluenceTd"><p>у ФЛ имеется задолженность.</p></td><td class="confluenceTd"><p>«За Вами числится задолженность. Чтобы стать налогоплательщиком налога на профессиональный доход необходимо ее погасить»</p></td></tr><tr><td class="confluenceTd"><p>REGISTRATION_RESTRICTED</p></td><td class="confluenceTd"><p>в системе НПД имеется информация от Партнеров или налоговых органов, что у ФЛ есть ограничения на постановку на учет в качестве плательщика НПД. </p></td><td class="confluenceTd"><p>«Постановка на учет в налоговом органе в качестве налогоплательщика налога на профессиональный доход невозможна, так как имеются  ограничения на постановку»;</p></td></tr><tr><td class="confluenceTd"><p>NOT_IDENTIFIED </p></td><td class="confluenceTd"><p>ФЛ не идентифицировано</p></td><td class="confluenceTd"><p>«По Вашим паспортным данным ИНН не найден. Если Вы знаете свой ИНН, попробуйте зарегистрироваться с использованием логина (ИНН) и пароля доступа к личному кабинету налогоплательщика. Если у Вас нет ИНН, Вам необходимо обратиться в любой налоговый орган, к функциям которого относится взаимодействие с физическими лицами, для получения ИНН»;</p><p><br/></p></td></tr><tr><td class="confluenceTd"><p>NOT_FULLY_IDENTIFIED </p><p /></td><td class="confluenceTd"><p>ФЛ идентифицировано неоднозначно</p></td><td class="confluenceTd"><p>«По Вашим данным выявлены несоответствия, налоговому органу необходимо провести уточняющие мероприятия. Пожалуйста, повторите попытку регистрации через 6 дней. Если через 6 дней зарегистрироваться не получится, обратитесь, пожалуйста, в службу технической поддержки»</p></td></tr><tr><td class="confluenceTd"><p>TAXPAYER_DIED </p></td><td class="confluenceTd"><p>у лица заполнена дата смерти</p></td><td class="confluenceTd"><p>«По Вашим данным выявлены несоответствия, налоговому органу необходимо провести уточняющие мероприятия. Пожалуйста, повторите попытку регистрации через 6 дней. Если через 6 дней зарегистрироваться не получится, обратитесь, пожалуйста, в службу технической поддержки»</p></td></tr><tr><td class="confluenceTd"><p>NO_RESIDENCY </p></td><td class="confluenceTd"><p>у лица нет действующей постановки</p></td><td class="confluenceTd"><p>«Ошибка при постановке на учет: Отсутствуют данные о постановке на учет в налоговом органе по месту жительства. Для постановки на учет по месту жительства обратитесь, пожалуйста, в любой налоговый орган, к функциям которого относится взаимодействие с физическими лицами, после чего необходимо повторить попытку регистрации»</p></td></tr><tr><td class="confluenceTd"><p>INVALID_CITIZENSHIP</p></td><td class="confluenceTd"><p>гражданство ФЛ не соответствует допустимому значению.</p></td><td class="confluenceTd"><p>«Выявлено несоответствие документов (данных), представленных физическим лицом, сведениям, имеющимся у налогового органа. По данным налогового органа физическое лицо не является гражданином Российской Федерации или других государств – членов Евразийского экономического союза»</p></td></tr><tr><td class="confluenceTd"><p>RESTRICTED_OCCUPATION</p></td><td class="confluenceTd"><p>ФЛ состоит на учете в качестве арбитражного управляющего, медиатора, оценщика, нотариуса, адвоката, лица, являющегося участником договора простого товарищества</p></td><td class="confluenceTd"><p>«Отказ в постановке на учет в качестве налогоплательщика налога на профессиональный доход – выявлено, что документы (данные) представлены физическим лицом в нарушение требований, установленных пунктом 2 статьи 4 Федерального закона, а именно: физическое лицо состоит на учете в налоговом органе в качестве арбитражного управляющего, медиатора, оценщика, нотариуса, адвоката, участника договора простого товарищества,  в ЕГРН есть такие сведения»;</p><p><br/></p></td></tr><tr><td class="confluenceTd"><p>IE_RESTRICTED_TAX_MODE</p></td><td class="confluenceTd"><p>ФЛ состоит на учете в налоговом органе в качестве ИП с применением специальных налоговых режимов (ПСН, ЕНВД, СРП, УСН, ЕСХН)</p></td><td class="confluenceTd"><p>«Отказ в постановке на учет в качестве налогоплательщика налога на профессиональный доход – выявлено, что документы (данные) представлены физическим лицом в нарушение требований, установленных пунктом 2 статьи 4 Федерального закона от 27.11.2018 № 422-ФЗ, а именно: физическое лицо состоит на учете в налоговом органе в качестве индивидуального предпринимателя, применяющего специальный режим налогообложения (УСН/ПСН/ЕНВД/СРП/ЕСХН).</p><p><br/></p></td></tr><tr><td class="confluenceTd"><p>UNKNOWN </p></td><td class="confluenceTd"><p>любая другая/неизвестная ошибка</p></td><td class="confluenceTd"><p>«При постановке на учет возникли технические проблемы. Пожалуйста, повторите попытку постановки на учет позже или обратитесь, в службу технической поддержки».</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

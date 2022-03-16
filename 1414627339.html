@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Определение ИНН по паспортным данным / selfemployments_inn</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="616726828.html">Работа с самозанятыми</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Определение ИНН по паспортным данным / selfemployments_inn
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Иван Максин</span>, last modified by <span class='editor'> Наталья Моргунова</span> on дек. 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <blockquote><p>GET /api/v1/selfemployments/inn</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="804a4d2a-d204-4685-b0f3-e46309d5fb86" class="confluenceTable"><colgroup><col style="width: 190.0px;"/><col style="width: 190.0px;"/><col style="width: 190.0px;"/><col style="width: 190.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>URL параметры</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Тип</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Пример</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>client_id</strong></p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><p>client1</p></td></tr></tbody></table></div><div class="table-wrap"><table data-layout="default" data-local-id="86498200-a556-448d-9726-5bbfc9639c6b" class="confluenceTable"><colgroup><col style="width: 202.0px;"/><col style="width: 157.0px;"/><col style="width: 121.0px;"/><col style="width: 200.0px;"/></colgroup><tbody><tr><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>Параметры строки запроса</strong></p></td><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>Описание поля</strong></p></td><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>Тип</strong></p></td><td data-highlight-colour="#f0f0f0" class="confluenceTd"><p><strong>  Примечание</strong></p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>firstName</strong></p></th><td class="confluenceTd"><p>Имя</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>lastName</strong></p></th><td class="confluenceTd"><p>Фамилия</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>patronymicName</strong></p></th><td class="confluenceTd"><p>Отчество</p></td><td class="confluenceTd"><p>string(path)</p></td><td class="confluenceTd"><p>опциональный</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>birthDay</strong></p></th><td class="confluenceTd"><p>Дата рождения</p></td><td class="confluenceTd"><p>string(path)</p></td><td class="confluenceTd"><p>В формате YYYY-mm-dd</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>passportSeries</strong></p></th><td class="confluenceTd"><p>Серия паспорта</p></td><td class="confluenceTd"><p>string(path)</p></td><td class="confluenceTd"><p>4 цифры без пробелов</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>passportNumber</strong></p></th><td class="confluenceTd"><p>Номер паспорта</p></td><td class="confluenceTd"><p>string(path)</p></td><td class="confluenceTd"><p>6 цифр без пробелов</p></td></tr></tbody></table></div><p><strong>Пример запроса</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">GET /api/v1/selfemployments/inn?firstName=Иван&amp;lastName=Иванов&amp;birthDay=2000-12-12&amp;passportSeries=1234&amp;passportNumber=123456</pre>
+</div></div><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;data&quot;: {
+        &quot;Inn&quot;: &quot;123456789012&quot;
+    }
+}</pre>
+</div></div><p><strong>Пример ответа если данные юзера не найдены в ФНС: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;data&quot;: {
+        &quot;Inn&quot;: null
+    }
+}</pre>
+</div></div><p><strong>Пример ответа при статусе “error“: Status 400 Bad Request</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;errors&quot;: [],
+    &quot;description&quot;: &quot;Bad request&quot;
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при недостатке прав: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Access Denied.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p> </p><div class="table-wrap"><table data-layout="default" data-local-id="da8ae522-5fbc-405f-8c95-fdf5e88dccdf" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Параметры</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>status</p></th><td class="confluenceTd"><p>Результат обработки запроса.</p><p>Возможные значения <strong>error</strong>/<strong>success</strong></p></td><td class="confluenceTd"><p>string (path)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Inn</p></th><td class="confluenceTd"><p>ИНН или null если не был определён</p><p> </p></td><td class="confluenceTd"><p>string(path)</p></td></tr></tbody></table></div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/1414627339/1566244865.png">image-20211210-081040.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

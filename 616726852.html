@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Нотификации о расходах (notifications)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625344756.html">Подписки на события</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="622166306.html">Оформление подписки / event_subscription_store</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Нотификации о расходах (notifications)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified on дек. 28, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Пример ответа</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+	&quot;type&quot;: &quot;payment.notification&quot;, 
+	&quot;data&quot;: {
+		&quot;partner&quot;: &quot;04b92d9f-a944-365c-9919-64539ee33b04&quot;, 
+		&quot;partner_id&quot;: 134, 
+		&quot;client_id&quot;: &quot;27d0b46d-b120-4e72-92c5-3de0b588fccc&quot;, 
+		&quot;date&quot;: &quot;14_октября_2020&quot;, 
+		&quot;amount&quot;: 50000, 
+		&quot;card_number&quot;: &quot;6678&quot;, 
+		&quot;merchant&quot;: &quot;3DI_QWB&quot;, 
+		&quot;place&quot;: &quot;643 Москва&quot;, 
+		&quot;transaction_type&quot;: &quot;Расход&quot;, 
+		&quot;mcc&quot;: 6051, 
+		&quot;category&quot;: &quot;Финансы&quot;, 
+		&quot;child_category&quot;: &quot;Прочие_финансовые_операции&quot;, 
+		&quot;balance&quot;: 147000, 
+		&quot;is_cancel&quot;: false, 
+		&quot;currency&quot;: &quot;RUB&quot;, 
+		&quot;currency_code&quot;: &quot;₽&quot;, 
+		&quot;currency_amount&quot;: 50000, 
+		&quot;ean&quot;: 2000005459764, 
+		&quot;ref_number&quot;: &quot;028812975349&quot;, 
+		&quot;merchant_name&quot;: &quot;3DI QWB&quot;, 
+		&quot;merchant_id&quot;: &quot;26798502&quot;, 
+		&quot;terminal_id&quot;: &quot;26798502&quot;, 
+		&quot;card_amount&quot;: 50000, 
+		&quot;datetime&quot;: &quot;2020-10-14T15:06:45+03:00&quot;},
+		&quot;timestamp&quot;: &quot;2020-10-14T15:06:47+03:00&quot;
+}
+</pre>
+</div></div><h4 id="id-Нотификацииорасходах(notifications)-Расшифровкаполейнотификации">Расшифровка полей нотификации</h4><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Примечание</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">amount</pre>
+</div></div></th><td class="confluenceTd"><p>Сумма в валюте списания</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">date</pre>
+</div></div></th><td class="confluenceTd"><p>Дата операции</p></td><td class="confluenceTd"><p> </p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">card_number</pre>
+</div></div></th><td class="confluenceTd"><p>Номер карты (маскированный)</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">city</pre>
+</div></div></th><td class="confluenceTd"><p>Город (если есть)</p></td><td class="confluenceTd"><p> </p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">country</pre>
+</div></div></th><td class="confluenceTd"><p>Страна (если есть)</p></td><td class="confluenceTd"><p> </p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">address</pre>
+</div></div></th><td class="confluenceTd"><p>Адрес (если есть)</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">type</pre>
+</div></div></th><td class="confluenceTd"><p>Тип операции (Расход, Перевод, Снятие, Пополнение, <em>Возврат</em>)</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>online</p></th><td class="confluenceTd"><p>Онлайн покупка (POS терминал)</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">merchant_name</pre>
+</div></div></th><td class="confluenceTd"><p>Имя мерчанта</p></td><td class="confluenceTd"><p> </p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>merchant_id</p></th><td class="confluenceTd"><p>ID мерчанта</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>terminal_id</p></th><td class="confluenceTd"><p>ID терминала</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">barcode</pre>
+</div></div></th><td class="confluenceTd"><p>Баркод карты</p></td><td class="confluenceTd"><p> </p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">currency</pre>
+</div></div></th><td class="confluenceTd"><p>Валюта списания (в формате ISO)</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">mcc</pre>
+</div></div></th><td class="confluenceTd"><p>mcc код</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">is_error</pre>
+</div></div></th><td class="confluenceTd"><p>Есть ли ошибка? Boolean</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">error_description</pre>
+</div></div></th><td class="confluenceTd"><p>Описание ошибки</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">balance</pre>
+</div></div></th><td class="confluenceTd"><p>Баланс карты (опционально)</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">card_amount</pre>
+</div></div></th><td class="confluenceTd"><p>Сумма в валюте карты (RUB)</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">ref_number</pre>
+</div></div></th><td class="confluenceTd"><p>RefNumber (не гарантируется уникальность)</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">resp_code</pre>
+</div></div></th><td class="confluenceTd"><p>resp_code, расшифровка ниже</p></td><td class="confluenceTd"><p /></td></tr></tbody></table></div><h4 id="id-Нотификацииорасходах(notifications)-Возможныевариантыresp_code">Возможные варианты resp_code</h4><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>resp_code</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Описание</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>00</p></th><td class="confluenceTd"><p>Операция одобрена</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>04</p></th><td class="confluenceTd"><p>Неверные данные карты</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>05</p></th><td class="confluenceTd"><p>Перевод не прошел</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>31</p></th><td class="confluenceTd"><p>Истек срок действия карты</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>41</p></th><td class="confluenceTd"><p>Карта потеряна</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>43</p></th><td class="confluenceTd"><p>Карта украдена</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>51</p></th><td class="confluenceTd"><p>Недостаточно средств</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>55</p></th><td class="confluenceTd"><p>Неправильный пин-код</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>57</p></th><td class="confluenceTd"><p>Ограничение действий по счету</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>61</p></th><td class="confluenceTd"><p>Количество попыток исчерпано</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>68</p></th><td class="confluenceTd"><p>Таймаут, время ожидания истекло</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>75</p></th><td class="confluenceTd"><p>Превышены попытки ввода неправильного пин</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>71</p></th><td class="confluenceTd"><p>Недостаточно лимитов</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>81</p></th><td class="confluenceTd"><p>Ошибка при ввода свв и/или срока действия карты</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>91</p></th><td class="confluenceTd"><p>Сервис недоступен</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>92</p></th><td class="confluenceTd"><p>Некорректные реквизиты для оплаты</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>93</p></th><td class="confluenceTd"><p>Сервис заблокирован</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>96</p></th><td class="confluenceTd"><p>Карта заблокирована по причине неправильного ввода пин</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>97</p></th><td class="confluenceTd"><p>Операции по карте недоступны</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

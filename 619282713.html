@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Изменение статуса идентификации (identification)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625344756.html">Подписки на события</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="622166306.html">Оформление подписки / event_subscription_store</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Изменение статуса идентификации (identification)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified on дек. 28, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Пример ответа</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;type&quot;: &quot;identification.success&quot;,
+  &quot;data&quot; {
+    &quot;client_id&quot;: &quot;47&quot;
+  }
+}
+
+
+{
+  &quot;type&quot;: &quot;identification.error&quot;,
+  &quot;data&quot; {
+    &quot;client_id&quot;: &quot;47&quot;,
+    &quot;message&quot; : &quot;passport: doc_status = 302: сведениями по заданным реквизитам не располагаем&quot;,
+    &quot;additional&quot; : {
+      &quot;passport&quot; : {
+          &quot;status&quot; : &quot;NotValid&quot;,
+          &quot;description&quot; : &quot;DOC_STATUS = 302: Сведениями по заданным реквизитам не располагаем&quot;
+      },
+      &quot;inn&quot; : {
+          &quot;status&quot; : &quot;Processing&quot;,
+          &quot;description&quot; : &quot;В обработке&quot;
+      },
+      &quot;snils&quot; : {
+          &quot;status&quot; : &quot;NotProcessed&quot;,
+          &quot;description&quot; : &quot;Не указан СНИЛС, проверка не производилась&quot;
+      }
+    }
+  }
+}</pre>
+</div></div><h4 id="id-Изменениестатусаидентификации(identification)-Расшифровкаполей">Расшифровка полей</h4><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Примечание</strong></p></th></tr></tbody></table></div><div class="table-wrap"><table data-layout="default" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Примечание</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">client_id</pre>
+</div></div></th><td class="confluenceTd"><p>Код клиента</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>message</p></th><td class="confluenceTd"><p>Описание ошибки</p></td><td class="confluenceTd"><p> </p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>additional</p></th><td class="confluenceTd"><p>Дополнительная расшифровка по отдельным документам/полям.<br/>На данный момент может быть: passport, snils, inn</p></td><td class="confluenceTd"><p>Доступна не у всех партнеров</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>additional.[].status</p></th><td class="confluenceTd"><p>NotProccessed|Processing|NotValid|Error|Valid</p></td><td class="confluenceTd"><p /></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>additional.[].description</p></th><td class="confluenceTd"><p>Описание в свободной форме</p></td><td class="confluenceTd"><p /></td></tr></tbody></table></div><p><br/></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

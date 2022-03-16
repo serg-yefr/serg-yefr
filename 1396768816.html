@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Получение списка зарегистрированных чеков / selfemployments_receipts</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="616726828.html">Работа с самозанятыми</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Получение списка зарегистрированных чеков / selfemployments_receipts
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> mikhalev</span>, last modified by <span class='editor'> Наталья Моргунова</span> on дек. 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p /><blockquote><p>GET /selfemployments/{client_id}/receipts?dateFrom=date_from&amp;dateTo=date_to</p></blockquote><p> </p><div class="table-wrap"><table data-layout="default" data-local-id="1e970dda-7209-42a1-b5de-33cba21ec3f3" class="confluenceTable"><colgroup><col style="width: 380.0px;"/><col style="width: 380.0px;"/></colgroup><tbody><tr><th class="confluenceTh"><p><strong>URL параметры</strong></p></th><th class="confluenceTh"><p><strong>Описание поля</strong></p></th></tr><tr><td class="confluenceTd"><p><strong>client_id</strong></p></td><td class="confluenceTd"><p>Идентификатор клиента<br/><strong>пример: client123</strong></p></td></tr><tr><td class="confluenceTd"><p><strong>date_from</strong></p></td><td class="confluenceTd"><p>дата начала периода в формате YYYY-MM-DD, без указания времени. время считается  00часов 00минут 00секунд.<br/><strong>Пример: 2021-02-25</strong></p></td></tr><tr><td class="confluenceTd"><p><strong>date_to</strong></p></td><td class="confluenceTd"><p>дата окончания периода в формате YYYY-MM-DD, без указания времени. время считается  23часов 59минут 59секунд.</p><p><strong>Пример: 2021-02-25</strong></p></td></tr></tbody></table></div><p /><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;client_id&quot;: &quot;f00001&quot;,
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;data&quot;: {
+        &quot;HasMore&quot;: &quot;false&quot;,
+        &quot;Receipts&quot;: [
+            {
+                &quot;Link&quot;: &quot;https://lknpd.nalog.ru/api/v1/receipt/34324245556/201nsinj22/print&quot;,
+                &quot;TotalAmount&quot;: &quot;22083.97&quot;,
+                &quot;ReceiptId&quot;: &quot;201nsinj22&quot;,
+                &quot;IncomeType&quot;: &quot;FROM_INDIVIDUAL&quot;,
+                &quot;RequestTime&quot;: &quot;2021-07-27T14:39:37.000Z&quot;,
+                &quot;OperationTime&quot;: &quot;2021-07-27T14:39:37.000Z&quot;,
+                &quot;TaxPeriodId&quot;: &quot;202107&quot;,
+                &quot;TaxToPay&quot;: &quot;883.3588&quot;,
+                &quot;PartnerCode&quot;: &quot;a4ce4aa1-8e53-4b5e-b63f-d42370cccccc&quot;,
+                &quot;Services&quot;: {
+                    &quot;Amount&quot;: &quot;22083.97&quot;,
+                    &quot;Name&quot;: &quot;Оплата по договору  112233&quot;,
+                    &quot;Quantity&quot;: &quot;1&quot;
+                }
+            }
+        ]
+    }
+}
+</pre>
+</div></div><p><strong>Пример ответа при статусе “error“: Status 400 Bad Request</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;errors&quot;: [],
+    &quot;description&quot;: &quot;Bad request&quot;
+}
+</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}
+</pre>
+</div></div><p><strong>Пример ответа при недостатке прав: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Access Denied.&quot;
+}
+</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 404 Not Found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}
+</pre>
+</div></div><p> </p><p><strong>Пример ответа: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p /><div class="table-wrap"><table data-layout="default" data-local-id="0a91b0a3-b1ec-4541-a41b-603d29031272" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/><col style="width: 140.0px;"/></colgroup><tbody><tr><th class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th class="confluenceTh"><p><strong>Описание поля</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><td class="confluenceTd"><p><code>client_id</code></p></td><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td class="confluenceTd"><p><code>status</code></p></td><td class="confluenceTd"><p>Статус выполнения запроса (success|error)</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><td class="confluenceTd"><p><code>data</code></p></td><td class="confluenceTd"><p>массив зарегистрированных чеков.</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p /><p />
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

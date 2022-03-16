@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Получение статуса платежа / payment_status</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="619413648.html">Прием платежей, выплаты на карты, операции холдирования и рекуррентов</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Получение статуса платежа / payment_status
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Игорь Бекренёв</span> on февр. 04, 2022
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Метод может быть использован для запроса статуса любой операции.</p><p>Альтернативой метода Получения статуса платежа служит подписка на событие <a href="616726852.html" data-linked-resource-id="616726852" data-linked-resource-version="2" data-linked-resource-type="page">notifications</a>, которая оповестит вас по факту смены статуса операции</p><blockquote><p>GET /api/v1/payment/{order_slug}</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="1549ee92-36af-4158-b7c1-43b72bb9f77f" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>URL параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_slug</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции со стороны партнера</p></td><td class="confluenceTd"><p>string (path)</p></td></tr></tbody></table></div><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;order_id&quot;: 11111,
+    &quot;order_slug&quot;: &quot;card_wof_1561018001.1903&quot;,
+    &quot;is_completed&quot;: true,
+    &quot;type&quot;: &quot;charge_unregistered&quot;,
+    &quot;amount&quot;: 1538304,
+    &quot;currency&quot;: &quot;RUB&quot;,
+    &quot;card_number&quot;: &quot;5469********5183&quot;,
+    &quot;is_authorization&quot;: false,
+    &quot;description&quot;: &quot;Успех&quot;,
+    &quot;state_code&quot;: 0,
+    &quot;state_description&quot;: &quot;Нет ошибки&quot;,
+    &quot;talkbank_commission&quot;: 100,
+    &quot;beneficiary_partner_commission&quot;: 50
+}</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при недостатке прав: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Access Denied.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибочном order_slug: Status 404 Not found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><div class="table-wrap"><table data-layout="default" data-local-id="24313450-76f6-42f8-b700-3bd9aba38d7d" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Поле ответа</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>order_id</p></th><td class="confluenceTd"><p>Уникальный идентификатор операции</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>is_completed</p></th><td class="confluenceTd"><p>Статус завершения операции</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>status</p></th><td class="confluenceTd"><p>Статус операции</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>type</p></th><td class="confluenceTd"><p>Тип операции (refill_unregistered | charge_unregistered | refill | withdrawal | charge_auth | charge_hold | charge_registered)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>amount</p></th><td class="confluenceTd"><p>Сумма списания (сейчас в копейках)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>currency</p></th><td class="confluenceTd"><p>Валюта операции (сейчас только RUB)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>card_number</p></th><td class="confluenceTd"><p>Маскированный номер карты</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>state_code</p></th><td class="confluenceTd"><p>Код ошибки</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>state_description</p></th><td class="confluenceTd"><p>Описание ошибки</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>card_token</p></th><td class="confluenceTd"><p>Токен карты после успешной авторизации/платежа (если есть)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>talkbank_commission</p></th><td class="confluenceTd"><p>Комиссия Talkbank</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>beneficiary_partner_commission</p></th><td class="confluenceTd"><p>Комиссия партнёра по бенефициару за вычетом комиссии Talkbank</p></td></tr></tbody></table></div><p><br/><strong>Возможные значения параметра type:</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="af9002c2-9709-452e-b5e0-d2dfee6bbd49" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>type</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Описание</p></th></tr><tr><td class="confluenceTd"><p>refill_unregistered</p></td><td class="confluenceTd"><p>Пополнение незарегистрированной карты со счета партнера</p></td></tr><tr><td class="confluenceTd"><p>charge_unregistered</p></td><td class="confluenceTd"><p>Списание с незарегистрированной карты на счет партнера</p></td></tr><tr><td class="confluenceTd"><p>refill</p></td><td class="confluenceTd"><p>Пополнение карты Talkbank (по ean)</p></td></tr><tr><td class="confluenceTd"><p>withdrawal</p></td><td class="confluenceTd"><p>Зачисление на счет партнера с карты Talkbank</p></td></tr><tr><td class="confluenceTd"><p>charge_auth</p></td><td class="confluenceTd"><p>Авторизационный платеж</p></td></tr><tr><td class="confluenceTd"><p>charge_hold</p></td><td class="confluenceTd"><p>Списание захолдированных средств на счет партнера</p></td></tr><tr><td class="confluenceTd"><p>charge_registered</p></td><td class="confluenceTd"><p>Списание с зарегистрированной карты на счет партнера</p></td></tr></tbody></table></div><p><strong>Возможные статусы операций:</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="7e294082-6612-4d15-8e49-4c4c9f31e453" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Status</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Описание</p></th></tr><tr><td class="confluenceTd"><p>new</p></td><td class="confluenceTd"><p>Создана заявка на проведение операции</p></td></tr><tr><td class="confluenceTd"><p>pending</p></td><td class="confluenceTd"><p>Операция в обработке. Обработка операции занимаем 1-2 минуты.</p></td></tr><tr><td class="confluenceTd"><p>hold</p></td><td class="confluenceTd"><p>Операция холдирования. Денежные средства успешно заморожены на карте клиента</p></td></tr><tr><td class="confluenceTd"><p>error</p></td><td class="confluenceTd"><p>Ошибка операции. Описание ошибки вернется в нотификации или при запросе метода payment_status</p></td></tr><tr><td class="confluenceTd"><p>expired</p></td><td class="confluenceTd"><p>Срок действия ордера истек. Статус возможен, если операция не была завершена.</p></td></tr><tr><td class="confluenceTd"><p>success</p></td><td class="confluenceTd"><p>Операция успешная</p></td></tr><tr><td class="confluenceTd"><p>cancelled</p></td><td class="confluenceTd"><p>Операция отменена. Статус применяется для операций холдирования, авторизации и списаний с карты</p></td></tr></tbody></table></div><p><strong>Жизненный цикл платежей</strong></p><p><code>new -&gt; pending [-&gt; hold] -&gt; error | expired | success [-&gt; cancelled]</code></p><p><strong>Коды возможных ошибок операций</strong></p><div class="table-wrap"><table data-layout="default" data-local-id="5aca8fd4-6ae9-4738-aa1b-7600ad10a9a6" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>state_code</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>state_description</p></th></tr></tbody></table></div><div class="table-wrap"><table data-layout="default" data-local-id="aac14694-e220-4d71-a459-7a372ed2a950" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>state_code</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>state_description</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>0</p></th><td class="confluenceTd"><p>Ошибок нет</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>10</p></th><td class="confluenceTd"><p>Недостаточно средств</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>11</p></th><td class="confluenceTd"><p>Карта не найдена</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>12</p></th><td class="confluenceTd"><p>Недействительная карта</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>13</p></th><td class="confluenceTd"><p>Транзакция недоступна для держателя карты</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>14</p></th><td class="confluenceTd"><p>Срок действия карты истек</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>15</p></th><td class="confluenceTd"><p>Карта утеряна</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>16</p></th><td class="confluenceTd"><p>Превышены лимиты карты</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>17</p></th><td class="confluenceTd"><p>Отказ эмитента или платежной системы</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>18</p></th><td class="confluenceTd"><p>Операции по карте ограничены</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>19</p></th><td class="confluenceTd"><p>Карта изъята</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>20</p></th><td class="confluenceTd"><p>Недействительный номер карты</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>21</p></th><td class="confluenceTd"><p>Не найден бин</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>22</p></th><td class="confluenceTd"><p>Операции пополнения недоступны по карте</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>23</p></th><td class="confluenceTd"><p>Неверный ввод CVV2</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>24</p></th><td class="confluenceTd"><p>Карта украдена</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>25</p></th><td class="confluenceTd"><p>Карта изъята</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>26</p></th><td class="confluenceTd"><p>Карта не найдена</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

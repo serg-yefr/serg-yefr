@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Получение лимитов по карте / card_limits</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625279092.html">Работа с картами Talkbank</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Получение лимитов по карте / card_limits
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Наталья Моргунова</span> on дек. 03, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <blockquote><p>GET /api/v1/clients/{client_id}/cards/{barcode}/limits</p></blockquote><p>Все значения лимитов передаются в копейках.</p><p>Лимит рассчитывается в течение календарного месяца. Обновление лимита происходит 1 числа каждого месяца.</p><div class="table-wrap"><table data-layout="default" data-local-id="b8bbce2e-c6e9-49af-80ea-42ad7c3331b3" class="confluenceTable"><colgroup><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>GET параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Пример</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><p>client1</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>barcode</p></th><td class="confluenceTd"><p>Штриховой код карты</p></td><td class="confluenceTd"><p>string (path)</p></td><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">2000000000001</pre>
+</div></div></td></tr></tbody></table></div><h4 id="id-Получениелимитовпокарте/card_limits-Возможныетипылимитов">Возможные типы лимитов</h4><div class="table-wrap"><table data-layout="default" data-local-id="8ec49eaf-38ad-4082-bb1e-256e2815923b" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Тип лимита</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание лимита</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Период</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>cash_day</p></th><td class="confluenceTd"><p>Снятие наличных</p></td><td class="confluenceTd"><p>День</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>cash_month</p></th><td class="confluenceTd"><p>Снятие наличных</p></td><td class="confluenceTd"><p>Месяц</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>pos_day</p></th><td class="confluenceTd"><p>Покупки (онлайн+оффлайн)</p></td><td class="confluenceTd"><p>День</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>pos_month</p></th><td class="confluenceTd"><p>Покупки (онлайн+оффлайн)</p></td><td class="confluenceTd"><p>Месяц</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>p2pcr_month</p></th><td class="confluenceTd"><p>Пополнения</p></td><td class="confluenceTd"><p>Месяц</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>p2pdb_day</p></th><td class="confluenceTd"><p>Переводы с карты</p></td><td class="confluenceTd"><p>День</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>p2pdb_month</p></th><td class="confluenceTd"><p>Переводы с карты</p></td><td class="confluenceTd"><p>Месяц</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>aggregate_month</p></th><td class="confluenceTd"><p>Общий расходный лимит (покупки+наличные+переводы)</p></td><td class="confluenceTd"><p>Месяц</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>internet_month</p></th><td class="confluenceTd"><p>Онлайн покупки</p></td><td class="confluenceTd"><p>Месяц</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>p2pcash_month</p></th><td class="confluenceTd"><p>Общий лимит на наличные и переводы</p></td><td class="confluenceTd"><p>Месяц</p></td></tr></tbody></table></div><p /><p><strong>Пример ответа: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;cash_day&quot;: {
+        &quot;max&quot;: 0,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 0,
+        &quot;desc&quot;: &quot;Card Cash Limit&quot;
+    },
+    &quot;pos_day&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;Card POS Limit&quot;
+    },
+    &quot;cash_month&quot;: {
+        &quot;max&quot;: 0,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 0,
+        &quot;desc&quot;: &quot;Card Cash Limit 1&quot;
+    },
+    &quot;pos_month&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;Card POS Limit 1&quot;
+    },
+    &quot;internet_month&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;Card Internet Limit 1&quot;
+    },
+    &quot;aggregate_month&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;Card Aggregate Limit 1&quot;
+    },
+    &quot;p2pcr_month&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;Card P2PCR Limit 1&quot;
+    },
+    &quot;p2pdb_day&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;CRD_CASH_P2PDB_LIMIT&quot;
+    },
+    &quot;p2pDb_month&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;CRD_CASH_P2PDB_LIMIT_1&quot;
+    },
+    &quot;p2pCash_month&quot;: {
+        &quot;max&quot;: 0,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 0,
+        &quot;desc&quot;: &quot;cash_month + p2pDb_month&quot;
+    }
+}</pre>
+</div></div><h4 id="id-Получениелимитовпокарте/card_limits-Примерответаошибкитокена:Status403Forbidden"><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></h4><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при недостатке прав: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Access Denied.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при несуществующем id клиента: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;cash_day&quot;: {
+        &quot;max&quot;: 0,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 0,
+        &quot;desc&quot;: &quot;Card Cash Limit&quot;
+    },
+    &quot;pos_day&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;Card POS Limit&quot;
+    },
+    &quot;cash_month&quot;: {
+        &quot;max&quot;: 0,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 0,
+        &quot;desc&quot;: &quot;Card Cash Limit 1&quot;
+    },
+    &quot;pos_month&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;Card POS Limit 1&quot;
+    },
+    &quot;internet_month&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;Card Internet Limit 1&quot;
+    },
+    &quot;aggregate_month&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;Card Aggregate Limit 1&quot;
+    },
+    &quot;p2pcr_month&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;Card P2PCR Limit 1&quot;
+    },
+    &quot;p2pdb_day&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;CRD_CASH_P2PDB_LIMIT&quot;
+    },
+    &quot;p2pDb_month&quot;: {
+        &quot;max&quot;: 20000000,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 20000000,
+        &quot;desc&quot;: &quot;CRD_CASH_P2PDB_LIMIT_1&quot;
+    },
+    &quot;p2pCash_month&quot;: {
+        &quot;max&quot;: 0,
+        &quot;used&quot;: 0,
+        &quot;rest&quot;: 0,
+        &quot;desc&quot;: &quot;cash_month + p2pDb_month&quot;
+    }
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке в баркоде: Status 404 Not found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p /><div class="table-wrap"><table data-layout="default" data-local-id="68187ff7-4bdf-40c9-8ec8-b866bb83fec5" class="confluenceTable"><colgroup><col style="width: 211.0px;"/><col style="width: 314.0px;"/><col style="width: 295.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Поле ответа</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>max</p></th><td class="confluenceTd"><p>Максимальное значение лимита</p></td><td class="confluenceTd"><p>int</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>used</p></th><td class="confluenceTd"><p>Сумма использованного лимита</p></td><td class="confluenceTd"><p>int</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>rest</p></th><td class="confluenceTd"><p>Остаток лимита</p></td><td class="confluenceTd"><p>int</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>desc</p></th><td class="confluenceTd"><p>Описание лимита</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p />
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

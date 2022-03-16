@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Получение транзакций по карте / card_transactions</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625279092.html">Работа с картами Talkbank</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Получение транзакций по карте / card_transactions
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Наталья Моргунова</span> on дек. 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Метод позволяет партнеру получить историю транзакций по карте клиента.</p><p>Расходные операции будут отражаться со знаком &quot;-&quot;</p><blockquote><p>GET /api/v1/clients/{client_id}/cards/{barcode}/transactions</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="3c7a1010-6183-4a6b-acad-c3fc2b87c914" class="confluenceTable"><colgroup><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/><col style="width: 170.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>URL Параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Описание</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>По умолчанию</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>barcode</p></th><td class="confluenceTd"><p>Баркод карты</p></td><td class="confluenceTd"><p /></td><td class="confluenceTd"><p>string (path)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>fromDate</p></th><td class="confluenceTd"><p>С какой даты показать историю транзакций</p></td><td class="confluenceTd"><p>-1 month</p></td><td class="confluenceTd"><p>ISOdate (query)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>toDate</p></th><td class="confluenceTd"><p>По какую дату показать историю транзакций</p></td><td class="confluenceTd"><p>now</p></td><td class="confluenceTd"><p>ISOdate (query)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>limit</p></th><td class="confluenceTd"><p>Лимит записей, максимум 1000</p></td><td class="confluenceTd"><p>1000</p></td><td class="confluenceTd"><p>int (query)</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>page</p></th><td class="confluenceTd"><p>Страница</p></td><td class="confluenceTd"><p>1</p></td><td class="confluenceTd"><p>int (query)</p></td></tr></tbody></table></div><p><br/><strong>Пример ответа при наличии транзакций: Status 200 ОК</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+      &quot;id&quot;: 44443137540,
+      &quot;datetime&quot;: &quot;2018-01-23 14:03:55&quot;,
+      &quot;cardNumber&quot;: &quot;4738********3296&quot;,
+      &quot;amount&quot;: 1500,
+      &quot;cardAmount&quot;: 1500,
+      &quot;type&quot;: &quot;debit&quot;,
+      &quot;currency&quot;: &quot;RUB&quot;,
+      &quot;category&quot;: {
+        &quot;name&quot;: &quot;Перевод с карты&quot;,
+        &quot;parent&quot;: &quot;Финансы&quot;
+      },
+      &quot;comment&quot;: &quot;TKB CardToCard, MOSCOW&quot;,
+      &quot;mcc&quot;: &quot;6012&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при отсутствии транзакций: Status 200 ОК</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">[]</pre>
+</div></div><p><strong>Пример ответа ошибки токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-10-11T08:23:48+00:00&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при несуществующем id клиента: Status 200 OK</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">[]</pre>
+</div></div><p><strong>Пример ответа при несуществующем баркоде: Status 404 Not Found</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Requested object is not found&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500 Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p /><h4 id="id-Получениетранзакцийпокарте/card_transactions-Расшифровкаполейтранзакции">Расшифровка полей транзакции</h4><p /><div class="table-wrap"><table data-layout="default" data-local-id="85b8ece2-f4d5-4def-b76e-cd0e0a6994f8" class="confluenceTable"><colgroup><col style="width: 166.67px;"/><col style="width: 231.67px;"/><col style="width: 189.67px;"/><col style="width: 232.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Примечание</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>id</p></th><td class="confluenceTd"><p>Идентификационный номер</p></td><td class="confluenceTd"><p>Для холдированных операций равен &quot;0&quot;, после подтверждения присваивается уникальный id</p></td><td class="confluenceTd"><p>int</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>datetime</p></th><td class="confluenceTd"><p>Дата и время совершения операции</p></td><td class="confluenceTd"><p> </p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>cardNumber</p></th><td class="confluenceTd"><p>Номер карты, с которой была совершена транзакция</p></td><td class="confluenceTd"><p>Выводятся первые и последние четыре цифры карты</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>amount</p></th><td class="confluenceTd"><p>Сумма в валюте транзакции</p></td><td class="confluenceTd"><p> </p></td><td class="confluenceTd"><p>int</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>cardAmount</p></th><td class="confluenceTd"><p>Сумма транзакции в валюте карты</p></td><td class="confluenceTd"><p> </p></td><td class="confluenceTd"><p>int</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>hold</p></th><td class="confluenceTd"><p>Показывает, что операция «заморожена»</p></td><td class="confluenceTd"><p>Для холдированных операций – true, для подтвержденных – поле отсутствует</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>type</p></th><td class="confluenceTd"><p>Тип транзакции</p></td><td class="confluenceTd"><p>debit – расходная, credit - доходная</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>currency</p></th><td class="confluenceTd"><p>Валюта транзакции</p></td><td class="confluenceTd"><p> </p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>category.parent</p></th><td class="confluenceTd"><p>Родительская категория</p></td><td class="confluenceTd"><p /></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><a href="http://category.name/" class="external-link" rel="nofollow">category.name</a></p></th><td class="confluenceTd"><p>Имя категории</p></td><td class="confluenceTd"><p /></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>mcc</p></th><td class="confluenceTd"><p>MMC-код торговой точки</p></td><td class="confluenceTd"><p> </p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

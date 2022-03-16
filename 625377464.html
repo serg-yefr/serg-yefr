@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BaaS для партнеров : Создание ссылки перевода card2card /payment_from_card_to_card</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">BaaS для партнеров</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="145621108.html">BaaS для партнеров Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="625279092.html">Работа с картами Talkbank</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            BaaS для партнеров : Создание ссылки перевода card2card /payment_from_card_to_card
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Наталья Боровикова</span>, last modified by <span class='editor'> Наталья Моргунова</span> on дек. 10, 2021
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Метод создает ссылку на пополнение или перевод. Требуется указать полные данные карты отправителя и карту получателя</p><blockquote><p>POST /api/v1/payment/{client_id}/from/card/to/card</p></blockquote><div class="table-wrap"><table data-layout="default" data-local-id="faf58060-02fe-4529-94b4-a8fc0f67f5ec" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>URL Параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>client_id</p></th><td class="confluenceTd"><p>Идентификатор клиента</p></td><td class="confluenceTd"><p>string (path)</p></td></tr></tbody></table></div><div class="table-wrap"><table data-layout="default" data-local-id="fcca27bf-47bb-42d6-83c6-5da70cff96e5" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>POST Параметры</p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>Тип</p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>to_card_number</p></th><td class="confluenceTd"><p>Номер карты пополнения</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>amount</p></th><td class="confluenceTd"><p>Сумма в копейках</p></td><td class="confluenceTd"><p>number</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>redirect_url</p></th><td class="confluenceTd"><p>Страница, на которую попадает пользователь после ввода 3dsec</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>card_info</p></th><td class="confluenceTd"><p>Данные карты отправителя</p></td><td class="confluenceTd"><p>array</p></td></tr></tbody></table></div><p> </p><div class="table-wrap"><table data-layout="default" data-local-id="62415c36-703f-4f17-bc65-48a9e58f6388" class="confluenceTable"><colgroup><col style="width: 226.67px;"/><col style="width: 226.67px;"/><col style="width: 226.67px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">card_info.number</pre>
+</div></div></th><td class="confluenceTd"><p>Номер карты</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">card_info.month</pre>
+</div></div></th><td class="confluenceTd"><p>Месяц окончания срока действия карты</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">card_info.year</pre>
+</div></div></th><td class="confluenceTd"><p>Год окончания срока действия карты</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">card_info.cvv</pre>
+</div></div></th><td class="confluenceTd"><p>Cvv/cvc код карты</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">card_info.holder</pre>
+</div></div></th><td class="confluenceTd"><p>Держатель карты</p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p><strong>Пример входных параметров</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{	
+  &quot;amount&quot;: 310,
+  &quot;card_info&quot;: {
+     &quot;number&quot;: &quot;4444111133335555&quot;,
+     &quot;month&quot;: &quot;01&quot;,
+     &quot;year&quot;: &quot;2021&quot;,
+     &quot;cvv&quot;: &quot;123&quot;,
+     &quot;holder&quot;: &quot;TALKBANK BLACK&quot;
+  },
+  &quot;to_card_number&quot;: &quot;4444111133335551&quot;
+}</pre>
+</div></div><p><strong>Пример ответа: Status 200 OK - не подтверждено</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;payment_id&quot;: &quot;yavz1s&quot;,
+  &quot;payment_link&quot;: &quot;lp.talkbank.io/payment/yavz1s&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке метода: Status 500  Internal Server Error</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Runtime error. Please try later.&quot;
+}</pre>
+</div></div><p><strong>Пример ответа при ошибке токена: Status 403 Forbidden</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+    &quot;description&quot;: &quot;Forbidden&quot;,
+    &quot;errors&quot;: [],
+    &quot;date&quot;: &quot;2021-12-01T08:00:29+00:00&quot;
+}</pre>
+</div></div><p /><div class="table-wrap"><table data-layout="default" data-local-id="f5b28bdf-f6c6-460c-aac0-0ba1be81dbbe" class="confluenceTable"><colgroup><col style="width: 340.0px;"/><col style="width: 340.0px;"/><col style="width: 140.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Поле ответа</strong></p></th><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p><strong>Описание поля</strong></p></th><th class="confluenceTh"><p><strong>Тип</strong></p></th></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>payment_id</p></th><td class="confluenceTd"><p>Идентификатор ссылки на пополнение</p></td><td class="confluenceTd"><p>string</p></td></tr><tr><th data-highlight-colour="#f0f0f0" class="confluenceTh"><p>payment_link</p></th><td class="confluenceTd"><p>Конец ссылки на пополнение. Окончание зависит от окружения. <a href="http://baas.talkbank.io/" class="external-link" rel="nofollow">baas.talkbank.io</a> → <a href="http://talkbank.io/payment/yavz1s" class="external-link" rel="nofollow">talkbank.io/payment/yavz1s</a></p></td><td class="confluenceTd"><p>string</p></td></tr></tbody></table></div><p><br/></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мар. 10, 2022 10:27</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
